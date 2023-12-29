@@ -1,6 +1,6 @@
 ### Ticket
 
-Explanation or link to the ticket
+Explanation or link to the ticket 
 
 ### Solution
 

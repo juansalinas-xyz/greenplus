@@ -7,8 +7,8 @@
 ## Pre-requirements
 
 - [Docker](https://www.docker.com/products/docker-desktop/)
-- [npm](https://nodejs.org/en/download)
-- [yarn](https://classic.yarnpkg.com/lang/en/docs/install) (optional)
+- [node](https://nodejs.org/en/download)
+- [yarn](https://classic.yarnpkg.com/lang/en/docs/install)
 
 ## Installation
 
@@ -21,8 +21,6 @@ git clone https://github.com/juansalinas-xyz/greenplus
 #### Step 2: _Install all dependencies_
 
 ```bash
-npm install
-# or
 yarn install
 ```
 
@@ -36,11 +34,7 @@ docker-compose up
 #### Step 4: _Run the development server_
 
 ```bash
-npm run dev
-# or
 yarn dev
-# or
-pnpm dev
 ```
 
 #### Step 5: _Open [http://localhost:3000](http://localhost:3000) with your browser to see the result_

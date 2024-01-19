@@ -2,10 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@model/*": ["app/backend/model/*"],
-      "@lib/*": ["app/backend/libs/*"],
-      "@repository/*": ["app/backend/repository/*"],
-      "@service/*": ["app/backend/service/*"]
+      "@model/*": ["src/app/backend/model/*"],
+      "@lib/*": ["src/app/backend/libs/*"],
+      "@repository/*": ["src/app/backend/repository/*"],
+      "@service/*": ["src/app/backend/service/*"],
+      "@usecase/*": ["src/app/usecase/*"]
     },
     "lib": [
       "dom",

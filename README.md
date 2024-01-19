@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Green Plus App
+
+## Based in:
+
+[<img src="public/next.svg" width="250" />](https://nextjs.org/)
 
 ## Pre-requirements
 
@@ -6,9 +10,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [npm](https://nodejs.org/en/download)
 - [yarn](https://classic.yarnpkg.com/lang/en/docs/install) (optional)
 
-## Getting Started
+## Installation
 
-Step 1, install npm modules
+#### Step 1: _Clone the project_
+
+```sh
+git clone https://github.com/juansalinas-xyz/greenplus
+```
+
+#### Step 2: _Install all dependencies_
 
 ```bash
 npm install
@@ -16,14 +26,14 @@ npm install
 yarn install
 ```
 
-Step 2, run the docker container to initialize a MongoDB locally:
+#### Step 3: _Run the docker container to initialize a MongoDB locally_
 
 ```bash
 cd .tools
 docker-compose up
 ```
 
-Step 3, run the development server:
+#### Step 4: _Run the development server_
 
 ```bash
 npm run dev
@@ -33,17 +43,9 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Step 5: _Open [http://localhost:3000](http://localhost:3000) with your browser to see the result_
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### There are postman collections to make requests to the api in: postman_collections folder

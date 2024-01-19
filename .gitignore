@@ -10,7 +10,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-.env
+# .env
 .env.production
 .env.local
 .env.development.local
@@ -19,3 +19,5 @@ yarn-error.log*
 .vercel
 
 *.tsbuildinfo
+
+mongodb_data/

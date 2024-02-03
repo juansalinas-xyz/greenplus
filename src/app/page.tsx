@@ -13,7 +13,7 @@ export default async function RootLayout(props: { children: ReactNode }) {
 				<a></a>
 			</header>
 
-			<section className="main-section">
+			<section className="main-section ">
 				<h2>Bienvenido a nuestra plataforma de tokenización de créditos de carbono.</h2>
 				<p>Estamos comprometidos con la sostenibilidad y la reducción de la huella de carbono.</p>
 				<p>¡Únete a nosotros para un futuro más verde!</p>

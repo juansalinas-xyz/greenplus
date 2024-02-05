@@ -2,11 +2,21 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@model/*": ["src/app/backend/model/*"],
-      "@lib/*": ["src/app/backend/libs/*"],
-      "@repository/*": ["src/app/backend/repository/*"],
-      "@service/*": ["src/app/backend/service/*"],
-      "@usecase/*": ["src/app/usecase/*"]
+      "@model/*": [
+        "src/app/backend/model/*"
+      ],
+      "@lib/*": [
+        "src/app/backend/libs/*"
+      ],
+      "@repository/*": [
+        "src/app/backend/repository/*"
+      ],
+      "@service/*": [
+        "src/app/backend/service/*"
+      ],
+      "@usecase/*": [
+        "src/app/usecase/*"
+      ]
     },
     "lib": [
       "dom",
@@ -28,7 +38,8 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "next-env.d.ts",

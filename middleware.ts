@@ -2,9 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(request: NextRequest) {
   // const requestHeaders = new Headers(request.headers);
-  // requestHeaders.set("Auth", "token");
 
-  // const response = NextResponse.next({
+  // const response = NextResponse.next({asdjfkasdkfhasdkjfkads
   //   headers: requestHeaders,
   // });
   const response = NextResponse.next();

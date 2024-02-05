@@ -1,6 +1,7 @@
 import mongoose,{Schema} from "mongoose"
 import { Person } from "@model/user";
-import { BaseUserRepository, baseOptions } from "./BaseUserRepository";
+import { BaseUserRepository } from "./BaseUserRepository";
+import { userTypes } from "@model/userTypesEnum";
 
 
 const PersonSchema=new Schema<Person>(
@@ -14,14 +15,14 @@ const PersonSchema=new Schema<Person>(
             required:[true,'Lastname is mandatory']
         }
     },
-    {
+   {
         timestamps:{
             createdAt:'creationTime',
             updatedAt:'updateTime'
         }
-    },
+    }
     
 );
 
-const PersonRepository = mongoose.models.Person || BaseUserRepository.discriminator<Person>('Person',PersonSchema,'userType'/*discrination key*/);
+const PersonRepository = mongoose.models.Person || BaseUserRepository.discriminator<Person>(userTypes.Person,PersonSchema);
 export {PersonRepository}

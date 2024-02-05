@@ -9,6 +9,7 @@ export interface BaseUser {
   documentNumber: string;
   email: string;
   phone: string;
+  type?:number
 }
 
 export interface Person extends BaseUser {
@@ -23,3 +24,4 @@ export interface Producer extends BaseUser {
 export interface Company extends BaseUser {
   address: string;
 }
+

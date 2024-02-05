@@ -2,10 +2,10 @@ import "./globals.css";
 import "./Home.css"
 import { type ReactNode } from "react";
 import { getAllUsers } from "@usecase/user";
-import { User } from "@model/user";
+import { BaseUser, User } from "@model/user";
 
 export default async function RootLayout(props: { children: ReactNode }) {
-	const users: User[] = await getAllUsers();
+	const users: BaseUser[] = await getAllUsers();
 	return (
 		<div className="home-container">
 			<header className="header">
@@ -24,7 +24,7 @@ export default async function RootLayout(props: { children: ReactNode }) {
 				{users.length > 0 ? (
 					<ul>
 						{users.map((user, index) => (
-							<li key={index}>{`${user.name} ${user.lastName}`}</li>
+							<li key={index}>{`username: ${user.name} document: ${user.documentNumber}`}</li>
 						))}
 					</ul>
 				) : (

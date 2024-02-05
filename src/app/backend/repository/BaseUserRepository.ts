@@ -1,18 +1,9 @@
-import mongoose,{Schema} from "mongoose"
+import mongoose,{DiscriminatorOptions, Schema} from "mongoose"
 import type { BaseUser } from "@model/user"
 
 
 
-const baseOptions = {
-	discriminatorKey: "type",
-}
 
- const enum userTypes {
-    Person = "person",
-    Company = "company",
-    Producer = "producer"
-
-}
 const BaseUserSchema = new Schema<BaseUser>(
     {
         name:{
@@ -33,13 +24,15 @@ const BaseUserSchema = new Schema<BaseUser>(
 
     },
     {
+        discriminatorKey:'userType',
         timestamps:{
             createdAt:'creationTime',
             updatedAt:'updateTime'
         }
-    }
+    },
+    
 );
 
 const BaseUserRepository=mongoose.models.BaseUser || mongoose.model<BaseUser>('BaseUser',BaseUserSchema);
 
-export {BaseUserRepository, userTypes}
+export {BaseUserRepository}

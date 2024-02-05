@@ -1,6 +1,7 @@
 import mongoose,{Schema} from "mongoose"
 import { Producer } from "@model/user";
-import { BaseUserRepository, baseOptions } from "./BaseUserRepository";
+import { BaseUserRepository,} from "./BaseUserRepository";
+import { userTypes } from "@model/userTypesEnum";
 
 
 
@@ -19,5 +20,5 @@ const ProducerSchema= new Schema<Producer>(
     }
 );
 
-const ProducerRepository = mongoose.models.Producer || BaseUserRepository.discriminator<Producer>('Producer',ProducerSchema,'userType');
+const ProducerRepository = mongoose.models.Producer || BaseUserRepository.discriminator<Producer>(userTypes.Producer,ProducerSchema);
 export {ProducerRepository};

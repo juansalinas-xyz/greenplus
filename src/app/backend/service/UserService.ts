@@ -1,10 +1,11 @@
 import { BaseUser, User } from "@model/user";
 import { dbConnect } from "@lib/dbConnect";
-import { UserRepository } from "@repository/UserRepository";
 import { PersonRepository } from "@repository/PersonRepository";
 import { ProducerRepository } from "@repository/ProducerRepository";
 import { CompanyRepository } from "@repository/CompanyRepository";
-import { BaseUserRepository, userTypes } from "@repository/BaseUserRepository";
+import { BaseUserRepository } from "@repository/BaseUserRepository";
+import { userTypes } from "@model/userTypesEnum";
+
 
 
 /* Para diferenciar el usuario podriamos desde el front mandar un numer 1:person,2:producer,3:company
@@ -51,21 +52,30 @@ export async function getAllUsersByType(type:number) : Promise<BaseUser[]>{
    
     try {
         await dbConnect();
-        if(type===1){
-            users = await PersonRepository.find({
-                userType:userTypes.Person
-            });
+        switch(type){
+            case 1:
+                users = await PersonRepository.find({
+                    userType:{$eq:userTypes.Person}
+                });
+            break;
+            case 2:
+                users = await ProducerRepository.find({
+                    userType:{$eq:userTypes.Producer}
+                });
+            break;
+            case 3:
+                users = await CompanyRepository.find({
+                    userType:{$eq:userTypes.Company}
+                });
+            break;
+            default:
+                throw new Error ('Invalid userType, it must be between 1 and 2')
         }
-        else if(type===2){
-            users = await ProducerRepository.find({
-                userType:userTypes.Producer
-            });
-        }
-        else{
-            users = await CompanyRepository.find({
-                userType:userTypes.Company
-            });
-        }   
+           
+        
+        
+            
+         
         return users;
     } catch (error) {
         throw new Error(error);
@@ -74,15 +84,18 @@ export async function getAllUsersByType(type:number) : Promise<BaseUser[]>{
 }
 
 export async function modifyUser(user:BaseUser,id:string){
+   
     try {
         await dbConnect();
-        let result = BaseUserRepository.replaceOne(
+        let result = BaseUserRepository.findOneAndReplace(
             {_id:{$eq:id}},
-            user
+            user,
+            {new:true}
           );
+          if(result==null) throw new Error(`There's no user with id: ${id}`)
        return result;
     } catch (error) {
-        throw new Error(error);
+        throw new Error(error.message);
     }
    
 }

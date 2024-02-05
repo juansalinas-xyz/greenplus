@@ -1,6 +1,6 @@
-import { User } from "@model/user";
+import { BaseUser, User } from "@model/user";
 
-export async function getAllUsers() : Promise<User[]> {
+export async function getAllUsers() : Promise<BaseUser[]> {
     try {
         const res = await fetch("http://localhost:3000/api/users", {
           cache: "no-store",

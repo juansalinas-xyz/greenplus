@@ -4,7 +4,8 @@ import { BaseUserRepository } from "./BaseUserRepository";
 import { userTypes } from "@model/userTypesEnum";
 
 
-const PersonSchema=new Schema<Person>(
+
+const PersonSchema = new Schema<Person>(
     {
         firstName:{
             type:String,

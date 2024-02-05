@@ -5,7 +5,7 @@ import { userTypes } from "@model/userTypesEnum";
 
 
 
-const ProducerSchema= new Schema<Producer>(
+const ProducerSchema = new Schema<Producer>(
     {
         address:{
             type:String,

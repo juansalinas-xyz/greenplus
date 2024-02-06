@@ -88,7 +88,7 @@ export async function modifyUser(user:BaseUser,id:string){
     try {
         await dbConnect();
         let result = BaseUserRepository.findOneAndReplace(
-            {_id:{$eq:id}},
+            {id:{$eq:id}},
             user,
             {new:true}
           );

@@ -37,7 +37,7 @@ export async function GET(req: NextRequest) {
     const type: number = parseInt(searchParams.get('type')) || 0;
     const typesNumbers = [0, 1, 2, 3]
     if (!typesNumbers.includes(type)) {
-      throw new Error('Invalid type number, it must be between 0 and 2')
+      throw new Error('Invalid type number, it must be between 0 and 3')
     }
 
     if (type === 0) {

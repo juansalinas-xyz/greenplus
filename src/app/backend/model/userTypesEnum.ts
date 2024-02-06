@@ -5,11 +5,6 @@ const enum userTypes {
 
 }
 
-const enum userTypesNumbers{
-  One= userTypes.Person,
-  Two=userTypes.Company,
-  Three=userTypes.Producer
-}
 
 
-export {userTypes,userTypesNumbers}
+export {userTypes}

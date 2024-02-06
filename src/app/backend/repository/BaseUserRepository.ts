@@ -1,4 +1,4 @@
-import mongoose,{DiscriminatorOptions, Schema} from "mongoose"
+import mongoose,{Schema} from "mongoose"
 import type { BaseUser } from "@model/user"
 
 

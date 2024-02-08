@@ -1,18 +1,15 @@
 
-export class CustomError extends Error{
+export class CustomError extends Error {
    
-    error:ErrorModel;
+    error: ErrorModel;
 
     constructor(message:string,error:ErrorModel){
         super(message);
         this.error=error;
     }
-   
-    
 }
 
-
-export  interface ErrorModel {
+export interface ErrorModel {
     type:string,
     title:string,
     status:number,

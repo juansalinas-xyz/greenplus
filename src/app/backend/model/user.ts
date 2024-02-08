@@ -1,27 +1,29 @@
-export interface User {
-  name: string;
-  lastName: string;
+export const enum UserType {
+  PERSON = "PERSON",
+  COMPANY = "COMPANY",
+  PRODUCER = "PRODUCER"
 }
 
-export interface BaseUser {
-  name: string;
+export interface User {
   document: string;
   documentNumber: string;
   email: string;
   phone: string;
-  type?:number
+  type: UserType
 }
 
-export interface Person extends BaseUser {
+export interface Person extends User {
   firstName: string;
   lastName: string;
 }
 
-export interface Producer extends BaseUser {
+export interface Producer extends User {
+  name: string;
   address: string;
 }
 
-export interface Company extends BaseUser {
+export interface Company extends User {
+  name: string;
   address: string;
 }
 

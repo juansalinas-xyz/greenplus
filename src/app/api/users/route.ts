@@ -68,6 +68,7 @@ export async function PUT(req: NextRequest) {
     const searchParams = req.nextUrl.searchParams
     const user = await req.json();
     const id: string = searchParams.get('id')
+    console.log(id);
     const resp = await modifyUser(user, id);
     return NextResponse.json(resp,
       {
@@ -78,7 +79,7 @@ export async function PUT(req: NextRequest) {
     return NextResponse.json(
       error.message,
       {
-        status: StatusCodes.BAD_REQUEST
+        status: StatusCodes.NOT_FOUND
       }
     );
   }

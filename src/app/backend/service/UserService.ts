@@ -5,6 +5,7 @@ import { ProducerRepository } from "@repository/ProducerRepository";
 import { CompanyRepository } from "@repository/CompanyRepository";
 import { BaseUserRepository } from "@repository/BaseUserRepository";
 import { userTypes } from "@model/userTypesEnum";
+import { CustomError,ErrorModel } from "@model/error";
 
 
 
@@ -84,19 +85,17 @@ export async function getAllUsersByType(type:number) : Promise<BaseUser[]>{
 }
 
 export async function modifyUser(user:BaseUser,id:string){
-    console.log('In service: id received: '+id)
+    const filter={_id:{$eq:id}}
     try {
         await dbConnect();
-        let storedUser = BaseUserRepository.findOne({
-            id:{$eq:id}
-        })
-        if(storedUser==null)
+        let storedUser = await BaseUserRepository.findOne(filter)
+        console.log(typeof storedUser)
+        console.log(storedUser)
+        if(!storedUser)
             throw new Error(`There's no user with id: ${id}`)
         else    
-            return BaseUserRepository.updateOne({
-                id:{$eq:id},
-                user
-        });
+            
+            return await BaseUserRepository.replaceOne(filter,user);
     } catch (error) {
         throw new Error(error.message);
     }

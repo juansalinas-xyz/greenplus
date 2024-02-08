@@ -84,16 +84,19 @@ export async function getAllUsersByType(type:number) : Promise<BaseUser[]>{
 }
 
 export async function modifyUser(user:BaseUser,id:string){
-   
+    console.log('In service: id received: '+id)
     try {
         await dbConnect();
-        let result = BaseUserRepository.findOneAndReplace(
-            {id:{$eq:id}},
-            user,
-            {new:true}
-          );
-          if(result==null) throw new Error(`There's no user with id: ${id}`)
-       return result;
+        let storedUser = BaseUserRepository.findOne({
+            id:{$eq:id}
+        })
+        if(storedUser==null)
+            throw new Error(`There's no user with id: ${id}`)
+        else    
+            return BaseUserRepository.updateOne({
+                id:{$eq:id},
+                user
+        });
     } catch (error) {
         throw new Error(error.message);
     }

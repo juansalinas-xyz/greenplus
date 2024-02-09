@@ -1,6 +1,7 @@
+import { Inter } from "next/font/google";
+import { UserProvider } from "@auth0/nextjs-auth0/client";
 import ThemeRegistry from "../theme/themeRegistry";
 import "./globals.css";
-import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeRegistry>
-        <body className={inter.className}>{children}</body>
+				<UserProvider>
+					<body className={inter.className}>{children}</body>
+				</UserProvider>
       </ThemeRegistry>
     </html>
   );

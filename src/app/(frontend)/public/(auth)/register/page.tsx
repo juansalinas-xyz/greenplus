@@ -9,27 +9,24 @@ import Link from "next/link";
 function Register() {
   const [error, setError] = useState();
   const router = useRouter();
+  const [values, setValues] = useState({
+    name: "",
+    lastname: "",
+    documenttype: "",
+    documentnumber: "",
+    phone: "",
+    email: "",
+    password: "",
+  });
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    console.log(values);
 
     try {
       const formData = new FormData(event.currentTarget);
 
-      const signupResponse = await axios.post(
-        "----------RUTA AL ENDPOINT----------",
-        {
-          name: formData.get("name"),
-          lastname: formData.get("lastname"),
-          documenttype: formData.get("documenttype"),
-          documentnumber: formData.get("documentnumber"),
-          phone: formData.get("phone"),
-          email: formData.get("email"),
-          password: formData.get("password"),
-        },
-      );
-
-      console.log(signupResponse);
+      const signupResponse = await axios.post("----------RUTA AL ENDPOINT----------", values);
 
       const res = await signIn("credentials", {
         email: signupResponse.data.email,
@@ -40,12 +37,22 @@ function Register() {
       if (res?.ok) return router.push("/dashboard/profile");
     } catch (error) {
       console.log(error);
+
       if (error instanceof AxiosError) {
         const errorMessage = error.response?.data.message;
         console.log(errorMessage);
         setError(errorMessage);
       }
     }
+  };
+
+  const handleInputChange = (event) => {
+    const {name, value} = event.target;
+
+    setValues({
+      ...values,
+      [name]: value,
+    })
   };
 
   return (
@@ -76,14 +83,18 @@ function Register() {
                 id="name"
                 name="name"
                 placeholder="Carlos"
+                value={values.name}
                 className="mr-3 mt-1 w-full rounded-md border border-white bg-transparent p-2 text-white focus:placeholder-transparent focus:outline-none"
+                onChange={handleInputChange}
               />
               <input
                 type="text"
                 id="lastname"
                 name="lastname"
                 placeholder="Alcaraz"
+                value={values.lastname}
                 className="ml-3 mt-1 w-full rounded-md border border-white bg-transparent p-2 text-white focus:placeholder-transparent focus:outline-none"
+                onChange={handleInputChange}
               />
             </div>
           </div>
@@ -93,8 +104,13 @@ function Register() {
             <select
               name="documenttype"
               id="documenttype"
+              value={values.documenttype}
               className="mt-1 cursor-pointer rounded-md border border-white bg-transparent p-2 text-white focus:outline-none"
+              onChange={handleInputChange}
             >
+              <option value="" className="text-black" disabled>
+                Document Type
+              </option>
               <option value="dni" className="text-black">
                 DNI
               </option>
@@ -107,7 +123,9 @@ function Register() {
               id="documentnumber"
               name="documentnumber"
               placeholder="XXXXXXXX"
+              value={values.documentnumber}
               className="ml-3 mt-1 w-full rounded-md border border-white bg-transparent p-2 text-white focus:placeholder-transparent focus:outline-none"
+              onChange={handleInputChange}
             />
           </div>
 
@@ -118,7 +136,9 @@ function Register() {
               id="phone"
               name="phone"
               placeholder="+54 9 11 XXXX XXXX"
+              value={values.phone}
               className="mt-1 w-full rounded-md border border-white bg-transparent p-2 text-white focus:placeholder-transparent focus:outline-none"
+              onChange={handleInputChange}
             />
           </div>
 
@@ -129,7 +149,9 @@ function Register() {
               id="email"
               name="email"
               placeholder="carlosalcaraz1999@gmail.com"
+              value={values.email}
               className="mt-1 w-full rounded-md border border-white bg-transparent p-2 text-white focus:placeholder-transparent focus:outline-none"
+              onChange={handleInputChange}
             />
           </div>
 
@@ -140,7 +162,9 @@ function Register() {
               id="password"
               name="password"
               placeholder="**********"
+              value={values.password}
               className="mt-1 w-full rounded-md border border-white bg-transparent p-2 text-white focus:placeholder-transparent focus:outline-none"
+              onChange={handleInputChange}
             />
           </div>
 

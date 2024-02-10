@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PrivateRoutes } from "../../_models/private-routes.enum";
+import { PrivateRoutes } from "src/utilities/private-routes";
 
 interface Props {
   children: React.ReactNode;
@@ -15,10 +15,10 @@ interface Props {
   return (
     <div>
       <h1>Nav dash</h1>
-      <Link href={`/${PrivateRoutes.DASHBOARD}`}>
+      <Link href={PrivateRoutes.DASHBOARD}>
         <button className="border-slate-600 border-2">Dashboard</button>
       </Link>
-      <Link href={`/${PrivateRoutes.PROFILE}`}>
+      <Link href={PrivateRoutes.MY_PROFILE}>
         <button className="border-slate-600 border-2">Profile</button>
       </Link>
 

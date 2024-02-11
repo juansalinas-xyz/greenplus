@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { PrivateRoutes } from "src/utilities/private-routes";
+import { PrivateRoutes } from "@utilities/private-routes.utility";
 
 interface Props {
   children: React.ReactNode;
   client: React.ReactNode;
   admin: React.ReactNode;
 }
- function DashboardLayout({ children, client, admin }: Props) {
+function DashboardLayout({ children, client, admin }: Props) {
   const role = {
     client: true,
     admin: false,

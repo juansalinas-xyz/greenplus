@@ -1,12 +1,10 @@
-import { generateOTP } from "@service/otp.service";
+import { generateOTP } from "@service/OtpService";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
-    const email = req.nextUrl.searchParams.get("email");
+  const email = req.nextUrl.searchParams.get("email");
 
-    const otp = await generateOTP(email);
+  await generateOTP(email);
 
-    return NextResponse.json({ otp });
+  return NextResponse.json({ msg: 'Email sent' });
 }
-
-

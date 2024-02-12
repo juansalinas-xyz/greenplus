@@ -1,5 +1,5 @@
 import { OtpData } from "@model/otp.interface";
-import { verifyOTP } from "@service/otp.service";
+import { verifyOTP } from "@service/OtpService";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {

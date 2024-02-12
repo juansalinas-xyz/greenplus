@@ -1,24 +1,26 @@
 import { dbConnect } from "@lib/dbConnect";
-import { OtpData } from "@model/otp.interface";
-import { OtpRepository } from "@repository/otp.repository";
+import { OtpRepository } from "@repository/OtpRepository";
 import bcrypt from "bcrypt";
+import { sendOtpEmail } from "./EmailNotificationsService";
+import { OtpData } from "@model/otp.interface";
 
-export const generateOTP = async (email: string): Promise<string> => {
+export const generateOTP = async (email: string): Promise<void> => {
   try {
     await dbConnect();
 
     const otp = `${Math.floor(1000 * Math.random() * 9000)}`;
+
     const hashedOtp = await bcrypt.hash(otp, 10);
 
-    const existingRecord = await OtpRepository.findOne({ email });
+    const existingOtp: OtpData = await OtpRepository.findOne({ email });
 
-    if (existingRecord) {
+    if (existingOtp) {
       await OtpRepository.findOneAndUpdate({ email }, { otp: hashedOtp });
     } else {
       await OtpRepository.create({ email, otp: hashedOtp });
     }
 
-    return otp;
+    await sendOtpEmail(existingOtp.email);
   } catch (error) {}
 };
 

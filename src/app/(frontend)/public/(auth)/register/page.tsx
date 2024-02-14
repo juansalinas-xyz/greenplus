@@ -105,23 +105,27 @@ function Register() {
 
   return (
     <div>
-      {Object.keys(formErrors).length === 0 && isSubmit ? (
-        <div>
-          <div className="w-full justify-center flex items-center mt-12">
-            <div className="flex h-16 w-56 items-center justify-center rounded-md border border-green-700 bg-green-100">
-              <p className="text-sm text-green-700">Registered successfully</p>
-            </div>
-          </div>
-        </div>
-      ) : (
-        ""
-      )}
       <div className="container mx-auto min-w-[355px] max-w-md rounded-md bg-gradient-to-r from-green-800 to-green-600 p-4 shadow-md">
         <div className="rounded-md bg-gradient-to-r from-green-800 to-green-600 p-6">
           <h2 className="z-0 mb-2 flex justify-center text-2xl font-semibold text-white">
             Welcome!
           </h2>
-          <div className="flex items-center mb-4">
+          <div className="relative">
+            {Object.keys(formErrors).length === 0 && isSubmit ? (
+              <div className="absolute inset-x-0 mx-auto bottom-0 z-10">
+                <div className="mt-12 flex w-full items-center justify-center">
+                  <div className="flex h-16 w-56 items-center justify-center rounded-md border border-green-700 bg-green-100">
+                    <p className="text-sm text-green-700">
+                      Registered successfully
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+          <div className="mb-4 flex items-center">
             <div className="h-px flex-grow border-spacing-0 border-t border-white"></div>
             <h3 className="m-3 text-white">Sign up with Email</h3>
             <div className="h-px flex-grow border-spacing-0 border-t border-white"></div>
@@ -133,7 +137,7 @@ function Register() {
                 <label className="text-white">Name</label>
                 <label className="ml-32 text-white sm:ml-40">Last Name</label>
               </div>
-              <div className="flex mb-3">
+              <div className="mb-3 flex">
                 <input
                   type="text"
                   id="name"
@@ -166,7 +170,7 @@ function Register() {
             </div>
 
             <label className="text-white">Document</label>
-            <div className="flex mb-3">
+            <div className="mb-3 flex">
               <select
                 name="documenttype"
                 id="documenttype"

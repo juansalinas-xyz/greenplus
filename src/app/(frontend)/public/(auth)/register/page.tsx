@@ -78,9 +78,9 @@ function Register() {
     if (!val.name) {
       errors.name = "Name is required!";
     } else if (values.name.length < 3) {
-      errors.phone = "Name must be more than 2 characters.";
+      errors.name = "Name must be more than 2 characters.";
     } else if (values.name.length > 20) {
-      errors.phone = "Name cannot exceed more than 20 characters.";
+      errors.name = "Name cannot exceed more than 20 characters.";
     }
 
     if (!val.lastname) {

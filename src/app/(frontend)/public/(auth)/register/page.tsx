@@ -19,6 +19,15 @@ function Register() {
     email: "",
     password: "",
   });
+  const [touched, setTouched] = useState({
+    name: false,
+    lastname: false,
+    documenttype: false,
+    documentnumber: false,
+    phone: false,
+    email: false,
+    password: false,
+  });
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -27,13 +36,13 @@ function Register() {
     setIsSubmit(true);
 
     try {
-      // const signupResponse = await axios.post("----------RUTA AL ENDPOINT----------", values);
-      // const res = await signIn("credentials", {
-      //   email: signupResponse.data.email,
-      //   password: values.password,
-      //   redirect: false,
-      // });
-      // if (res?.ok) return router.push("/dashboard/profile");
+      const signupResponse = await axios.post("----------RUTA AL ENDPOINT----------", values);
+      const res = await signIn("credentials", {
+        email: signupResponse.data.email,
+        password: values.password,
+        redirect: false,
+      });
+      if (res?.ok) return router.push("/dashboard/profile");
     } catch (error) {
       console.log(error);
 
@@ -60,7 +69,7 @@ function Register() {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       console.log(values);
     }
-  }, [formErrors]);
+  }, [formErrors, touched]);
 
   const validate = (val) => {
     const errors: Record<string, string> = {};
@@ -68,10 +77,18 @@ function Register() {
 
     if (!val.name) {
       errors.name = "Name is required!";
+    } else if (values.name.length < 3) {
+      errors.phone = "Name must be more than 2 characters.";
+    } else if (values.name.length > 20) {
+      errors.phone = "Name cannot exceed more than 20 characters.";
     }
 
     if (!val.lastname) {
       errors.lastname = "Lastname is required!";
+    } else if (values.lastname.length < 3) {
+      errors.phone = "Lastname must be more than 2 characters.";
+    } else if (values.lastname.length > 20) {
+      errors.phone = "Lastname cannot exceed more than 20 characters.";
     }
 
     if (!val.documenttype) {
@@ -80,10 +97,18 @@ function Register() {
 
     if (!val.documentnumber) {
       errors.documentnumber = "Document number is required!";
+    } else if (values.documentnumber.length < 6) {
+      errors.password = "Document number must be more than 6 characters.";
+    } else if (values.documentnumber.length > 20) {
+      errors.password = "Document number cannot exceed more than 20 characters.";
     }
 
     if (!val.phone) {
       errors.phone = "Phone is required!";
+    } else if (values.phone.length < 8) {
+      errors.phone = "Invalid phone!";
+    } else if (values.phone.length > 20) {
+      errors.phone = "Invalid phone!";
     }
 
     if (!values.email) {
@@ -101,6 +126,17 @@ function Register() {
     }
 
     return errors;
+  };
+
+  const handleBlur = (event) => {
+    const { name } = event.target;
+
+    setTouched((prevTouched) => ({
+      ...prevTouched,
+      [name]: true,
+    }));
+  
+    setFormErrors(validate(values));
   };
 
   return (
@@ -146,6 +182,7 @@ function Register() {
                   value={values.name}
                   className="mr-3 mt-1 w-full rounded-md border border-white bg-transparent p-2 text-white focus:placeholder-transparent focus:outline-none"
                   onChange={handleInputChange}
+                  onBlur={handleBlur}
                 />
                 <input
                   type="text"
@@ -155,15 +192,16 @@ function Register() {
                   value={values.lastname}
                   className="ml-3 mt-1 w-full rounded-md border border-white bg-transparent p-2 text-white focus:placeholder-transparent focus:outline-none"
                   onChange={handleInputChange}
+                  onBlur={handleBlur}
                 />
               </div>
               <div className="flex flex-row">
                 <div className="w-4/12">
-                  <p className="mt-1 text-sm text-red-500">{formErrors.name}</p>
+                  <p className="mt-1 text-sm text-red-500">{touched.name && formErrors.name}</p>
                 </div>
                 <div>
                   <p className="ml-20 mt-1 text-sm text-red-500">
-                    {formErrors.lastname}
+                    {touched.lastname && formErrors.lastname}
                   </p>
                 </div>
               </div>
@@ -177,6 +215,7 @@ function Register() {
                 value={values.documenttype}
                 className="mt-1 cursor-pointer rounded-md border border-white bg-transparent p-2 text-white focus:outline-none"
                 onChange={handleInputChange}
+                onBlur={handleBlur}
               >
                 <option value="" className="text-black" disabled>
                   Document Type
@@ -196,17 +235,18 @@ function Register() {
                 value={values.documentnumber}
                 className="ml-3 mt-1 w-full rounded-md border border-white bg-transparent p-2 text-white focus:placeholder-transparent focus:outline-none"
                 onChange={handleInputChange}
+                onBlur={handleBlur}
               />
             </div>
             <div className="flex flex-row">
               <div className="w-5/12">
                 <p className="mt-1 text-sm text-red-500">
-                  {formErrors.documenttype}
+                  {touched.documenttype && formErrors.documenttype}
                 </p>
               </div>
               <div className="ml-1">
                 <p className="mt-1 text-sm text-red-500">
-                  {formErrors.documentnumber}
+                  {touched.documentnumber && formErrors.documentnumber}
                 </p>
               </div>
             </div>
@@ -221,8 +261,9 @@ function Register() {
                 value={values.phone}
                 className="mt-1 w-full rounded-md border border-white bg-transparent p-2 text-white focus:placeholder-transparent focus:outline-none"
                 onChange={handleInputChange}
+                onBlur={handleBlur}
               />
-              <p className="mt-1 text-sm text-red-500">{formErrors.phone}</p>
+              <p className="mt-1 text-sm text-red-500">{touched.phone && formErrors.phone}</p>
             </div>
 
             <div className="mb-3">
@@ -235,8 +276,9 @@ function Register() {
                 value={values.email}
                 className="mt-1 w-full rounded-md border border-white bg-transparent p-2 text-white focus:placeholder-transparent focus:outline-none"
                 onChange={handleInputChange}
+                onBlur={handleBlur}
               />
-              <p className="mt-1 text-sm text-red-500">{formErrors.email}</p>
+              <p className="mt-1 text-sm text-red-500">{touched.email && formErrors.email}</p>
             </div>
 
             <div className="mb-3">
@@ -249,8 +291,9 @@ function Register() {
                 value={values.password}
                 className="mt-1 w-full rounded-md border border-white bg-transparent p-2 text-white focus:placeholder-transparent focus:outline-none"
                 onChange={handleInputChange}
+                onBlur={handleBlur}
               />
-              <p className="mt-1 text-sm text-red-500">{formErrors.password}</p>
+              <p className="mt-1 text-sm text-red-500">{touched.password && formErrors.password}</p>
             </div>
 
             <button

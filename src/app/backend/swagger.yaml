@@ -1,0 +1,110 @@
+swagger: '2.0'
+info:
+  title: Greenplus
+  version: 1.0.0
+paths:
+  /users:
+    get:
+      summary: Get a list of users
+      description: Retrieve a list of all users.
+      parameters:
+        - name: type
+          in: query
+          type: number
+          description: user types 1 person, 2 producer, 3 company, without number retrieves all users without filter
+          required: false
+      responses:
+        '200':
+          description: OK
+          
+    post:
+      summary: Create a new user
+      description: Create a new user.
+      parameters:
+        - name: user
+          in: body
+          description: User object
+          required: true
+          schema:
+            $ref: '#/definitions/Person'
+      responses:
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+    put:
+      summary: Update a user
+      description: Update an existing user.
+      parameters:
+        - name: user
+          in: body
+          description: User object
+          required: true
+          schema:
+            $ref: '#/definitions/Person'
+        - name: id
+          in: query
+          type: string
+          required : true
+          description: user Id
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+definitions:
+  Person:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      document:
+        type: string
+      documentNumber:
+        type: string
+      email:
+        type: string
+      phone:
+        type: string
+      firstName: 
+        type: string
+      lastName:
+        type: string
+  Producer:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      document:
+        type: string
+      documentNumber:
+        type: string
+      email:
+        type: string
+      phone:
+        type: string
+      address: 
+        type: string
+  Company:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      document:
+        type: string
+      documentNumber:
+        type: string
+      email:
+        type: string
+      phone:
+        type: string
+      address: 
+        type: string
+     
+      

@@ -23,3 +23,5 @@ yarn-error.log*
 mongodb_data/
 
 yarn.lock
+
+package-lock.json

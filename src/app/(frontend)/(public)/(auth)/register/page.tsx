@@ -12,34 +12,42 @@ function Register() {
   const [isSubmit, setIsSubmit] = useState(false);
   const [values, setValues] = useState({
     name: "",
-    lastname: "",
-    documenttype: "",
-    documentnumber: "",
+    firstName: "",
+    lastName: "",
+    document: "",
+    documentNumber: "",
     phone: "",
     email: "",
-    password: "",
+    // password: "",
+    type: "PERSON",
   });
   const [touched, setTouched] = useState({
     name: false,
-    lastname: false,
-    documenttype: false,
-    documentnumber: false,
+    firstName: false,
+    lastName: false,
+    document: false,
+    documentNumber: false,
     phone: false,
     email: false,
-    password: false,
+    // password: false,
   });
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    console.log(values);
+
     setFormErrors(validate(values));
     setIsSubmit(true);
 
     try {
-      const signupResponse = await axios.post("----------RUTA AL ENDPOINT----------", values);
+      const signupResponse = await axios.post(
+        "http://localhost:3000/api/users",
+        values,
+      );
       const res = await signIn("credentials", {
         email: signupResponse.data.email,
-        password: values.password,
+        // password: values.password,
         redirect: false,
       });
       if (res?.ok) return router.push("/dashboard/profile");
@@ -49,7 +57,7 @@ function Register() {
       if (error instanceof AxiosError) {
         const errorMessage = error.response?.data.message;
         console.log(errorMessage);
-        setFormErrors(errorMessage);
+        setFormErrors({ ...formErrors, ...errorMessage });
       }
     }
   };
@@ -76,31 +84,40 @@ function Register() {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
     if (!val.name) {
-      errors.name = "Name is required!";
+      errors.name = "Username is required!";
     } else if (values.name.length < 3) {
-      errors.name = "Name must be more than 2 characters.";
+      errors.name = "Username must be more than 2 characters.";
     } else if (values.name.length > 20) {
-      errors.name = "Name cannot exceed more than 20 characters.";
+      errors.name = "Username cannot exceed more than 20 characters.";
     }
 
-    if (!val.lastname) {
-      errors.lastname = "Lastname is required!";
-    } else if (values.lastname.length < 3) {
-      errors.phone = "Lastname must be more than 2 characters.";
-    } else if (values.lastname.length > 20) {
-      errors.phone = "Lastname cannot exceed more than 20 characters.";
+    if (!val.firstName) {
+      errors.firstName = "Name is required!";
+    } else if (values.firstName.length < 3) {
+      errors.firstName = "Name must be more than 2 characters.";
+    } else if (values.firstName.length > 20) {
+      errors.firstName = "Name cannot exceed more than 20 characters.";
     }
 
-    if (!val.documenttype) {
-      errors.documenttype = "Type is required!";
+    if (!val.lastName) {
+      errors.lastName = "Lastname is required!";
+    } else if (values.lastName.length < 3) {
+      errors.lastName = "Lastname must be more than 2 characters.";
+    } else if (values.lastName.length > 20) {
+      errors.lastName = "Lastname cannot exceed more than 20 characters.";
     }
 
-    if (!val.documentnumber) {
-      errors.documentnumber = "Document number is required!";
-    } else if (values.documentnumber.length < 6) {
-      errors.password = "Document number must be more than 6 characters.";
-    } else if (values.documentnumber.length > 20) {
-      errors.password = "Document number cannot exceed more than 20 characters.";
+    if (!val.document) {
+      errors.document = "Type is required!";
+    }
+
+    if (!val.documentNumber) {
+      errors.documentNumber = "Document number is required!";
+    } else if (values.documentNumber.length < 6) {
+      errors.documentNumber = "Document number must be more than 6 characters.";
+    } else if (values.documentNumber.length > 20) {
+      errors.documentNumber =
+        "Document number cannot exceed more than 20 characters.";
     }
 
     if (!val.phone) {
@@ -117,13 +134,13 @@ function Register() {
       errors.email = "This is not a valid email format!";
     }
 
-    if (!values.password) {
-      errors.password = "Password is required!";
-    } else if (values.password.length < 8) {
-      errors.password = "Password must be more than 8 characters.";
-    } else if (values.password.length > 20) {
-      errors.password = "Password cannot exceed more than 20 characters.";
-    }
+    // if (!values.password) {
+    //   errors.password = "Password is required!";
+    // } else if (values.password.length < 8) {
+    //   errors.password = "Password must be more than 8 characters.";
+    // } else if (values.password.length > 20) {
+    //   errors.password = "Password cannot exceed more than 20 characters.";
+    // }
 
     return errors;
   };
@@ -135,7 +152,7 @@ function Register() {
       ...prevTouched,
       [name]: true,
     }));
-  
+
     setFormErrors(validate(values));
   };
 
@@ -161,13 +178,30 @@ function Register() {
               ""
             )}
           </div>
-          <div className="mb-4 flex items-center">
+          <div className="mb-1 flex items-center">
             <div className="h-px flex-grow border-spacing-0 border-t border-white"></div>
             <h3 className="m-3 text-white">Sign up with Email</h3>
             <div className="h-px flex-grow border-spacing-0 border-t border-white"></div>
           </div>
 
           <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label className="text-white">Username</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Carlitos"
+                value={values.name}
+                className="mt-1 w-full rounded-md border border-white bg-transparent p-2 text-white focus:placeholder-transparent focus:outline-none"
+                onChange={handleInputChange}
+                onBlur={handleBlur}
+              />
+              <p className="mt-1 text-sm text-red-500">
+                {touched.name && formErrors.name}
+              </p>
+            </div>
+
             <div>
               <div className="flex">
                 <label className="text-white">Name</label>
@@ -176,20 +210,20 @@ function Register() {
               <div className="mb-3 flex">
                 <input
                   type="text"
-                  id="name"
-                  name="name"
+                  id="firstName"
+                  name="firstName"
                   placeholder="Carlos"
-                  value={values.name}
+                  value={values.firstName}
                   className="mr-3 mt-1 w-full rounded-md border border-white bg-transparent p-2 text-white focus:placeholder-transparent focus:outline-none"
                   onChange={handleInputChange}
                   onBlur={handleBlur}
                 />
                 <input
                   type="text"
-                  id="lastname"
-                  name="lastname"
+                  id="lastName"
+                  name="lastName"
                   placeholder="Alcaraz"
-                  value={values.lastname}
+                  value={values.lastName}
                   className="ml-3 mt-1 w-full rounded-md border border-white bg-transparent p-2 text-white focus:placeholder-transparent focus:outline-none"
                   onChange={handleInputChange}
                   onBlur={handleBlur}
@@ -197,11 +231,13 @@ function Register() {
               </div>
               <div className="flex flex-row">
                 <div className="w-4/12">
-                  <p className="mt-1 text-sm text-red-500">{touched.name && formErrors.name}</p>
+                  <p className="mt-1 text-sm text-red-500">
+                    {touched.firstName && formErrors.firstName}
+                  </p>
                 </div>
                 <div>
                   <p className="ml-20 mt-1 text-sm text-red-500">
-                    {touched.lastname && formErrors.lastname}
+                    {touched.lastName && formErrors.lastName}
                   </p>
                 </div>
               </div>
@@ -210,9 +246,9 @@ function Register() {
             <label className="text-white">Document</label>
             <div className="mb-3 flex">
               <select
-                name="documenttype"
-                id="documenttype"
-                value={values.documenttype}
+                name="document"
+                id="document"
+                value={values.document}
                 className="mt-1 cursor-pointer rounded-md border border-white bg-transparent p-2 text-white focus:outline-none"
                 onChange={handleInputChange}
                 onBlur={handleBlur}
@@ -229,10 +265,10 @@ function Register() {
               </select>
               <input
                 type="number"
-                id="documentnumber"
-                name="documentnumber"
+                id="documentNumber"
+                name="documentNumber"
                 placeholder="XXXXXXXX"
-                value={values.documentnumber}
+                value={values.documentNumber}
                 className="ml-3 mt-1 w-full rounded-md border border-white bg-transparent p-2 text-white focus:placeholder-transparent focus:outline-none"
                 onChange={handleInputChange}
                 onBlur={handleBlur}
@@ -241,12 +277,12 @@ function Register() {
             <div className="flex flex-row">
               <div className="w-5/12">
                 <p className="mt-1 text-sm text-red-500">
-                  {touched.documenttype && formErrors.documenttype}
+                  {touched.document && formErrors.documenttype}
                 </p>
               </div>
               <div className="ml-1">
                 <p className="mt-1 text-sm text-red-500">
-                  {touched.documentnumber && formErrors.documentnumber}
+                  {touched.documentNumber && formErrors.documentNumber}
                 </p>
               </div>
             </div>
@@ -263,7 +299,9 @@ function Register() {
                 onChange={handleInputChange}
                 onBlur={handleBlur}
               />
-              <p className="mt-1 text-sm text-red-500">{touched.phone && formErrors.phone}</p>
+              <p className="mt-1 text-sm text-red-500">
+                {touched.phone && formErrors.phone}
+              </p>
             </div>
 
             <div className="mb-3">
@@ -278,10 +316,12 @@ function Register() {
                 onChange={handleInputChange}
                 onBlur={handleBlur}
               />
-              <p className="mt-1 text-sm text-red-500">{touched.email && formErrors.email}</p>
+              <p className="mt-1 text-sm text-red-500">
+                {touched.email && formErrors.email}
+              </p>
             </div>
 
-            <div className="mb-3">
+            {/* <div className="mb-3">
               <label className="text-white">Password</label>
               <input
                 type="password"
@@ -294,7 +334,7 @@ function Register() {
                 onBlur={handleBlur}
               />
               <p className="mt-1 text-sm text-red-500">{touched.password && formErrors.password}</p>
-            </div>
+            </div> */}
 
             <button
               type="submit"

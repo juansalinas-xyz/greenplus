@@ -6,6 +6,7 @@ export interface FormValues {
     documentNumber: string,
     phone: string,
     email: string,
+    adress: string,
     // password: string,
     type: UserType,
 }
@@ -18,6 +19,7 @@ export interface FormValuesTouched {
     documentNumber: boolean,
     phone: boolean,
     email: boolean,
+    adress: boolean,
     // password: boolean,
 }
 
@@ -29,6 +31,7 @@ export interface FormValuesErrors {
     documentNumber: string,
     phone: string,
     email: string,
+    adress: string,
     // password: string,
 }
 

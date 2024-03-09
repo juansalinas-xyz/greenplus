@@ -35,7 +35,7 @@ function FormSelect({
         name={name}
         id={id}
         value={document}
-        className="mt-1 h-10 cursor-pointer rounded-md border border-white bg-transparent p-2 text-white focus:outline-none"
+        className="text-xs mt-1 h-9 cursor-pointer rounded-md border border-slate-400 bg-transparent p-2 text-slate-950 focus:border-2 focus:border-green-800 focus:outline-none"
         onChange={handleInputChange}
         onBlur={handleBlur}
       >
@@ -58,7 +58,7 @@ function FormSelect({
           </option>
         ))}
       </select>
-      <p className="mt-1 text-sm text-red-500">{touched && formError}</p>
+      <p className="mt-1 text-xs text-red-500">{touched && formError}</p>
     </div>
   );
 }

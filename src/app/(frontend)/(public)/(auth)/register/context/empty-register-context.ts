@@ -9,7 +9,7 @@ export interface IRegisterContext {
     touched: FormValuesTouched,
     handleSubmit: (e: SubmitEventType) => void,
     handleInputChange: (e: ChangeEvent) => void,
-    handleBlur: (e: BlurEvent) => void
+    handleBlur: (e: BlurEvent) => void,
 };
 
 export const emptyIRegisterContext = {    

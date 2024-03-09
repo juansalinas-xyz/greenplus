@@ -49,20 +49,22 @@ export const RegisterProvider = ({ children }: ChildrenType) => {
     if(formErrors && Object.keys(formErrors).length === 0 && isSubmit){
       registerPost(formValues, setSent);
       console.log("________________________ENTRO________________________");//---------------BORRAR---------------
-      setIsSubmit(false);
     }
+    setIsSubmit(false);
   }, [isSubmit]);
 
   const handleSubmit = async (event: SubmitEventType) => {
     event.preventDefault();
-
-    console.log(formValues);
 
     setFormErrors(registerValidate(formValues));
 
     if (formErrors && Object.keys(formErrors).length === 0) {
       setIsSubmit(true);
     }
+
+    console.log(".....................................................");
+    console.log(formErrors);
+    console.log(".....................................................");
   };
 
   const handleInputChange = (event: ChangeEvent) => {
@@ -76,13 +78,13 @@ export const RegisterProvider = ({ children }: ChildrenType) => {
     setFormErrors(registerValidate(formValues));
   };
 
-  useEffect(() => {
-    console.log(formErrors);
+  // useEffect(() => {
+  //   console.log(formErrors);
 
-    if (formErrors && Object.keys(formErrors).length === 0 && isSubmit) {
-      setSent(true);
-    }
-  }, [isSubmit]);
+  //   if (formErrors && Object.keys(formErrors).length === 0 && isSubmit) {
+  //     setSent(true);
+  //   }
+  // }, [isSubmit]);
 
   const handleBlur = (event: BlurEvent) => {
     const { name } = event.target;

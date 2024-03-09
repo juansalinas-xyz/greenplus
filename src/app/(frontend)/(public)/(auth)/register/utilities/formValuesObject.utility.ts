@@ -8,6 +8,7 @@ export const formValuesObject: FormValues = {
   documentNumber: "",
   phone: "",
   email: "",
+  adress: "",
   // password: "",
   type: UserType.PERSON,
 };
@@ -20,5 +21,6 @@ export const formValuesObjectTouched: FormValuesTouched = {
     documentNumber: false,
     phone: false,
     email: false,
+    adress: false,
     // password: false,
 }

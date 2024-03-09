@@ -12,20 +12,22 @@ export const registerValidate = (val:any) => {
       errors.name = "Username cannot exceed more than 20 characters.";
     }
 
-    if (!val.firstName) {
-      errors.firstName = "Name is required!";
-    } else if (val.firstName.length < 3) {
-      errors.firstName = "Name must be more than 2 characters.";
-    } else if (val.firstName.length > 20) {
-      errors.firstName = "Name cannot exceed more than 20 characters.";
-    }
+    if(val.type == "PERSON") {
+      if (!val.firstName) {
+        errors.firstName = "Name is required!";
+      } else if (val.firstName.length < 3) {
+        errors.firstName = "Name must be more than 2 characters.";
+      } else if (val.firstName.length > 20) {
+        errors.firstName = "Name cannot exceed more than 20 characters.";
+      }
 
-    if (!val.lastName) {
-      errors.lastName = "Lastname is required!";
-    } else if (val.lastName.length < 3) {
-      errors.lastName = "Lastname must be more than 2 characters.";
-    } else if (val.lastName.length > 20) {
-      errors.lastName = "Lastname cannot exceed more than 20 characters.";
+      if (!val.lastName) {
+        errors.lastName = "Lastname is required!";
+      } else if (val.lastName.length < 3) {
+        errors.lastName = "Lastname must be more than 2 characters.";
+      } else if (val.lastName.length > 20) {
+        errors.lastName = "Lastname cannot exceed more than 20 characters.";
+      }
     }
 
     if (!val.document) {
@@ -53,6 +55,16 @@ export const registerValidate = (val:any) => {
       errors.email = "Email is required!";
     } else if (!regex.test(val.email)) {
       errors.email = "This is not a valid email format!";
+    }
+
+    if(val.type != "PERSON"){
+      if (!val.adress) {
+        errors.adress = "Adress is required!";
+      } else if (val.adress.length < 3) {
+        errors.adress = "Adress must be more than 2 characters.";
+      } else if (val.adress.length > 50) {
+        errors.adress = "Adress cannot exceed more than 50 characters.";
+      }
     }
 
     // if (!values.password) {

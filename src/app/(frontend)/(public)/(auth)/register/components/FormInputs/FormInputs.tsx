@@ -1,5 +1,4 @@
 interface Props {
-  title: string;
   id: string;
   name: string;
   placeholder: string;
@@ -12,7 +11,6 @@ interface Props {
 }
 
 function FormInputs({
-  title,
   id,
   name,
   placeholder,
@@ -25,18 +23,17 @@ function FormInputs({
 }: Props) {
   return (
     <div className="mb-3">
-      <label htmlFor={id} className="text-white">{title}</label>
       <input
         type={type}
         id={id}
         name={name}
         placeholder={placeholder}
         value={value}
-        className="mt-1 h-10 w-full rounded-md border border-white bg-transparent p-2 text-white focus:placeholder-transparent focus:outline-none"
+        className="text-xs mt-1 h-9 w-full rounded-md bg-transparent p-2 text-slate-950 border border-slate-400 focus:border-2 focus:border-green-800 focus:placeholder-transparent focus:outline-none"
         onChange={handleInputChange}
         onBlur={handleBlur}
       />
-      <p className="mt-1 text-sm text-red-500">{touched && formError}</p>
+      <p className="mt-1 text-xs text-red-500">{touched && formError}</p>
     </div>
   );
 }

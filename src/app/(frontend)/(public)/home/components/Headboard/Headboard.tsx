@@ -1,8 +1,9 @@
 import React from 'react'
-import Image from 'next/image'
 import NavBar from '../NavBar/NavBar'
-import { oswald } from 'src/app/fonts'
 import SlideButtons from '../SlideButtons/SlideButtons'
+
+import localFont from 'next/font/local';
+const insaniburger = localFont({src: '../../assets/fonts/Insaniburger.woff2'});
 
 function Headboard() {
   return (
@@ -11,11 +12,11 @@ function Headboard() {
         <div className='flex flex-col bg-cover bg-center h-screen w-screen' style={{backgroundImage: 'url(/landing/fondo-cabecera-landing.png)'}}>
           <NavBar />
           <div className='w-screen flex justify-center flex-grow mt-28'>
-            <div className=' flex flex-row gap-5 text-white' style={{width: '70%'}}>
-              <div className='w-1/2 flex flex-col gap-5'>
-                <h1 className={`${oswald.className} text-8xl`}>Greenplus</h1>
+            <div className=' flex flex-row gap-5 text-white' style={{width: '75%'}}>
+              <div className='w-1/2 flex flex-col gap-1'>
+                <h1 className={`${insaniburger.className} text-8xl`}>Greenplus</h1>
                 <h4 className='text-sm font-medium'>Nos destacamos como el puente que conecta a individuos con un estilo de vida sustentable y a empresas con operaciones respetuosas con el medio ambiente. Estamos comprometidos con descarbonizar el futuro y contribuir a la construcción de una economía sostenible.</h4>
-                <button className='w-28 rounded-lg p-2 mt-6 bg-gray-300 text-black font-bold hover:bg-gray-400'>
+                <button className='w-28 rounded-lg p-2 mt-12 bg-gray-300 text-black font-bold hover:bg-gray-400'>
                   TIENDA
                 </button>
               </div>

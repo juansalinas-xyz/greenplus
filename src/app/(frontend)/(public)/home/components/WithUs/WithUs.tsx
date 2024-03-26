@@ -1,11 +1,14 @@
 "use client"
 
-import React, { useState, useRef } from 'react'
+import React, { useRef } from 'react'
 
 import SlideButtons from '../SlideButtons/SlideButtons'
 import WithUsCarrousel from '../WithUsCarrousel/WithUsCarrousel'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+import localFont from 'next/font/local';
+const insaniburger = localFont({src: '../../assets/fonts/Insaniburger.woff2'});
 
 function WithUs() {
   const cards = [
@@ -51,10 +54,10 @@ function WithUs() {
   };
 
   return (
-    <div className='flex w-screen justify-center'>
-      <div className='mb-12 flex flex-col justify-center' style={{width: '70%'}}>
+    <div id='nosotros' className='flex w-screen justify-center'>
+      <div className='mb-12 flex flex-col justify-center' style={{width: '75%'}}>
         <div className='w-full flex justify-center mb-12'>
-          <div className='flex justify-between flex-col text-xl font-black'>
+          <div className={`${insaniburger.className} flex justify-between flex-col text-xl font-light`}>
             <p className='flex w-48 text-green_greenplus'>CON NOSOTROS</p>
             <p className='text-black'>PODRAS</p>
           </div>      

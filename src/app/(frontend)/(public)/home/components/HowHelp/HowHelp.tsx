@@ -1,10 +1,13 @@
 import React from "react";
 
+import localFont from 'next/font/local';
+const insaniburger = localFont({src: '../../assets/fonts/Insaniburger.woff2'});
+
 function HowHelp() {
   return (
     <div className="my-12 w-screen flex justify-center">
-      <div style={{width: '70%'}}>
-        <div className="flex flex-row gap-1 mb-4 text-xl font-black">
+      <div style={{width: '75%'}}>
+        <div className={`${insaniburger.className} flex flex-row gap-1 mb-4 text-xl font-light`}>
           <p className="text-black">¿Cómo ayuda</p>
           <p className="flex text-green_greenplus">Greenplus</p>
           <p className="text-black">?</p>

@@ -1,8 +1,8 @@
-import { roboto } from "src/app/fonts";
+import { lora } from "src/app/fonts";
 
 function Dashboard2Layot({ children }: { children: React.ReactElement }) {
   return (
-    <div  className={`${roboto.className} text-black bg-white overflow-hidden`}>
+    <div  className={`${lora.className} text-black bg-white overflow-hidden`}>
       {children}
     </div>
   );

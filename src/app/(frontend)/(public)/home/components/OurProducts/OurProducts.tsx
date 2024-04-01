@@ -1,10 +1,15 @@
-import React from 'react';
-import ProductsCarousel from '../ProductsCarousel/ProductsCarousel';
+"use client";
+
+import React from "react";
+import ProductsCarousel from "../ProductsCarousel/ProductsCarousel";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import localFont from 'next/font/local';
-const insaniburger = localFont({src: '../../assets/fonts/Insaniburger.woff2'});
+import localFont from "next/font/local";
+import { Reveal } from "../Reveal/Reveal";
+const insaniburger = localFont({
+  src: "../../assets/fonts/Insaniburger.woff2",
+});
 
 function OurProducts() {
   const products = [
@@ -36,19 +41,26 @@ function OurProducts() {
   ];
 
   return (
-    <div id='productos' className='w-screen flex justify-center my-12'>
-      <div className='mb-12 flex flex-col justify-center' style={{width: '75%'}}>
-        <div className='flex justify-center flex-col'> 
-          <div className='w-full flex justify-center'>
-            <h4 className={`${insaniburger.className} text-xl font-light mb-6`}>NUESTROS PRODUCTOS</h4>
-          </div>
-          <div>
-            <ProductsCarousel items={products} />
-          </div>
+    <div id="productos" className="w-screen flex justify-center my-12">
+      <div
+        className="mb-12 flex flex-col justify-center"
+        style={{ width: "75%" }}
+      >
+        <div className="flex justify-center flex-col">
+          <Reveal>
+            <div>
+              <div className="w-full flex justify-center">
+                <h4 className={` text-xl font-semibold mb-6`}>NUESTROS PRODUCTOS</h4>
+              </div>
+              <div>
+                <ProductsCarousel items={products} />
+              </div>
+            </div>
+          </Reveal>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default OurProducts
+export default OurProducts;

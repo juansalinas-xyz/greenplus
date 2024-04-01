@@ -10,11 +10,11 @@ const WithUsCarrousel = ({ items, sliderRef }) => {
     const settings = {
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 1000,
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 4000,
         prevArrow: <Arrow />, 
         nextArrow: <Arrow />,
         responsive: [
@@ -41,7 +41,7 @@ const WithUsCarrousel = ({ items, sliderRef }) => {
   return (
     <Slider {...settings} ref={sliderRef} >
       {items.map((item, index) => (
-        <div key={index} className={`h-72 w-60 bg-green_greenplus p-5 flex flex-col gap-3 rounded-sm text-white`}>
+        <div key={index} className={`h-72 w-60 bg-green_greenplus p-5 flex flex-col gap-3 rounded-lg text-white`}>
           <div className="flex flex-row gap-3 mb-3">
             <Image
               src={item.logo}

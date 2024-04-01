@@ -3,7 +3,16 @@ const nextConfig = {
   // env: {
   //   API_KEY: "http://localhost:3000",
   // },
-  images: { domains: ["lh3.googleusercontent.com"]},
+  images: { 
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '**',
+      },
+    ],
+
+  },
   reactStrictMode: true,
   swcMinify: true,
   modularizeImports: {

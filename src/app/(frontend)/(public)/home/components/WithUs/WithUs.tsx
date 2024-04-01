@@ -8,7 +8,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import localFont from 'next/font/local';
+import { Reveal } from '../Reveal/Reveal';
 const insaniburger = localFont({src: '../../assets/fonts/Insaniburger.woff2'});
+
+import { loraItalic } from "src/app/fonts";
 
 function WithUs() {
   const cards = [
@@ -57,14 +60,22 @@ function WithUs() {
     <div id='nosotros' className='flex w-screen justify-center'>
       <div className='mb-12 flex flex-col justify-center' style={{width: '75%'}}>
         <div className='w-full flex justify-center mb-12'>
-          <div className={`${insaniburger.className} flex justify-between flex-col text-xl font-light`}>
-            <p className='flex w-48 text-green_greenplus'>CON NOSOTROS</p>
-            <p className='text-black'>PODRAS</p>
-          </div>      
-          <SlideButtons clickPrev={prevSlide} clickNext={nextSlide} />
+          <div className={` flex justify-between flex-col text-xl font-semibold`}>
+            <Reveal>
+              <div className={`${loraItalic.className} font-black`}>
+                <p className='flex w-48 text-green_greenplus'>CON NOSOTROS</p>
+                <p className='text-black'>PODRAS</p>
+              </div>
+            </Reveal>
+          </div>
+          <Reveal>
+            <SlideButtons clickPrev={prevSlide} clickNext={nextSlide} />
+          </Reveal>
         </div>
         <div>
-          <WithUsCarrousel items={cards} sliderRef={sliderRef} />
+          <Reveal>
+            <WithUsCarrousel items={cards} sliderRef={sliderRef} />
+          </Reveal>
         </div>
       </div>
     </div>

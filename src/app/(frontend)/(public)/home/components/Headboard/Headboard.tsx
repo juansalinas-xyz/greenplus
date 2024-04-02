@@ -25,7 +25,7 @@ function Headboard() {
                   <div className='w-full flex justify-center flex-col gap-10 mt-0 md:block md:justify-start md:flex-row md:w-auto md:gap-0'>
                     <h1 className={`hidden font-black text-5xl mb-20 md:block md:text-8xl md:mb-4`}>Greenplus</h1>
                     <h4 className='flex justify-center text-center text-2xl font-bold md:text-sm mb-4 md:mb-0 md:mt-4 md:block md:font-normal md:text-justify'>Nos destacamos como el puente que conecta a individuos con un estilo de vida sustentable y a empresas con operaciones respetuosas con el medio ambiente. Estamos comprometidos con descarbonizar el futuro y contribuir a la construcción de una economía sostenible.</h4>
-                    <Link href={'http://localhost:3000/tienda'} className='w-full flex justify-center md:w-auto md:block'>
+                    <Link href={'/store'} className='w-full flex justify-center md:w-auto md:block'>
                       <button className='w-28 rounded-lg p-2 bg-gray-300 text-black font-bold hover:bg-gray-400 md:mt-9'>
                         TIENDA
                       </button>

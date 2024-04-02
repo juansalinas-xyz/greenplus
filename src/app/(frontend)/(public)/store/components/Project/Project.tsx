@@ -1,26 +1,41 @@
-import React from 'react'
-import Image from 'next/image'
+import React from "react";
 
-function Project() {
-  return (
-    <div className='w-1/2 h-full rounded-md bg-white flex flex-col mx-4 hover:scale-110 hover:shadow-2xl transition-transform'>
-        <div className='w-full h-1/2 flex justify-center items-end bg-cover bg-center rounded-t-md' style={{backgroundImage: 'url(/store/fondo-cabecera-store.png)'}}>
-            <p className='text-white text-lg font-bold pb-2'>Bosques de Brasil</p>
-        </div>
-        <div className='w-full h-1/2 flex justify-center flex-col p-3'>
-            <p className='text-black text-center text-xs mb-2'>
-                Se ubica en la región centro oeste del Uruguay, en predios con pasturas degradadas que solían utilizarse para ganadería extensiva.
-            </p>
-            <p className='text-black text-xs'>Ubicación: Rio, Brasil</p>
-            <p className='text-black text-xs'>Responsable: Gobierno de Brasil</p>
-            <div className='w-full flex justify-end'>
-                <div className='w-1/5 h-5 flex justify-center items-center bg-green_greenplus rounded-lg mt-2 mb-1'>
-                    <p className='text-white text-xs'>$100 USD</p>
-                </div>
-            </div>
-        </div>
-    </div>
-  )
+interface Props {
+  title: string;
+  desc: string;
+  ubication: string;
+  responsible: string;
+  size: string;
+  timescale: string;
+  mitigation: number;
+  price: number;
+  image: string;
 }
 
-export default Project
+function Project({ title, desc, ubication, responsible, size, timescale, mitigation, price, image }: Props) {
+  return (
+    <div className="w-[95%] h-80 rounded-md bg-white flex flex-col mx-4 hover:scale-110 hover:shadow-2xl transition-transform">
+      <div
+        className="w-full h-2/5 flex justify-center items-end bg-cover bg-center rounded-t-md"
+        style={{ backgroundImage: `url(${image})` }}
+      >
+        <p className="text-white text-xl font-bold pb-3">{title}</p>
+      </div>
+      <div className="w-full h-3/5 flex justify-center flex-col px-5 pb-5 pt-5">
+        <div className="text-black text-center text-xs mb-2 hover:scale-105 transition-transform">{desc}</div>
+        <div className="flex flex-row gap-1 text-black text-xs mt-auto hover:text-green_greenplus hover:scale-105 transition-transform "><p className="font-black">Ubicación:</p> {ubication}</div>
+        <div className="flex flex-row gap-1 text-black text-xs hover:text-green_greenplus hover:scale-105 transition-transform"><p className="font-black">Responsable:</p> {responsible}</div>
+        <div className="flex flex-row gap-1 text-black text-xs hover:text-green_greenplus hover:scale-105 transition-transform"><p className="font-black">Tamaño:</p> {size} HA</div>
+        <div className="flex flex-row gap-1 text-black text-xs hover:text-green_greenplus hover:scale-105 transition-transform"><p className="font-black">Duracion:</p> {timescale} años</div>
+        <div className="flex flex-row gap-1 text-black text-xs hover:text-green_greenplus hover:scale-105 transition-transform"><p className="font-black">Mitigación:</p> {mitigation} CO2/año</div>
+        <div className="w-full flex justify-end mt-auto">
+          <div className="flex justify-center items-center bg-green_greenplus rounded-full mt-2 mb-1 py-1.5 px-3 hover:scale-105 hover:shadow-lg transition-transform">
+            <p className="text-white text-sm font-black">${price} USD</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Project;

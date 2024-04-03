@@ -6,7 +6,7 @@ interface Props {
   ubication: string;
   responsible: string;
   size: string;
-  timescale: string;
+  timescale: number;
   mitigation: number;
   price: number;
   image: string;

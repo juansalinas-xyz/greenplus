@@ -35,7 +35,7 @@ function NavBar() {
         <div 
           className={`${
             menuOpen ? 'flex' : 'hidden'
-          } md:flex flex-col items-end absolute z-10 pr-7 pb-7 pt-3 gap-8 w-screen text-base font-semibold md:gap-0 md:p-0 md:flex-row md:justify-between md:w-2/4 md:h-10 bg-gray-100 md:font-bold md:rounded-b-2xl md:text-sm`}
+          } md:flex flex-col items-end absolute z-10 pr-7 pb-7 pt-3 gap-8 w-screen text-base font-semibold text-black md:gap-0 md:p-0 md:flex-row md:justify-between md:w-2/4 md:h-10 bg-gray-100 md:font-bold md:rounded-b-2xl md:text-sm`}
         >
           <div onClick={handleNosotrosClick} className='md:h-full md:w-1/5 md:flex justify-center items-center cursor-pointer hover:scale-110'>
             <p>Nosotros</p>

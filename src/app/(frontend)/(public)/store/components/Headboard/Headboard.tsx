@@ -9,7 +9,7 @@ function Headboard() {
         <div className='flex flex-col bg-cover bg-bottom h-full w-screen bg-fixed' style={{backgroundImage: 'url(/store/fondo-cabecera-store.png)'}}>
           <NavBar />
           <div className='h-full w-full flex justify-center items-center'>
-            <p className='text-8xl text-white font-black mt-5'>Tienda</p>
+            <p className='text-8xl text-white font-black mt-32 mb-20'>Tienda</p>
           </div>
           <WaveEffect />
         </div>

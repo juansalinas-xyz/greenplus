@@ -5,7 +5,7 @@ import Footer from './components/Footer/Footer'
 
 function Store() {
   return (
-    <div className='h-screen w-screen'>
+    <div className='h-auto w-screen'>
         <Headboard />
         <OurProjects />
         <Footer />

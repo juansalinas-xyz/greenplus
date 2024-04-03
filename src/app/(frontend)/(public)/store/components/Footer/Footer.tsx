@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 function Footer() {
   return (
-    <div className='w-screen h-52 bg-cover bg-left mt-96' style={{backgroundImage: 'url(/store/fondo-cabecera-store.png)'}}>
+    <div className='w-screen h-52 bg-cover bg-left mt-10' style={{backgroundImage: 'url(/store/fondo-cabecera-store.png)'}}>
       <div className='flex flex-row w-full h-full bg-gren_footer bg-opacity-90'>
         <div className='w-full h-full p-6 flex flex-col justify-evenly items-center text-center md:text-start md:flex-row md:p-0 md:justify-evenly'>
           <div className='w-full flex flex-col gap-1 md:w-1/4'>

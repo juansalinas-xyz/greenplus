@@ -11,8 +11,8 @@ function Contact() {
     <div id='contacto' className='w-screen flex justify-center my-12'>
       <div style={{width: '75%'}}>
         <Reveal>
-          <div className='flex justify-end w-full h-96 mb-12 rounded-3xl bg-cover bg-center shadow-xl md:rounded-l-lg md:rounded-r-3xl' style={{backgroundImage: 'url(/landing/contact/fondo_contacto.jpg)'}}>
-            <div className='h-full w-full flex justify-center items-start pb-7 flex-col rounded-3xl bg-white shadow-xl md:w-96'>
+          <div className='flex justify-end w-full h-96 mb-12 rounded-3xl bg-cover bg-center shadow-xl md:rounded-3xl md:transition-transform md:duration-500 md:focus-within:scale-110' style={{backgroundImage: 'url(/landing/contact/fondo_contacto.jpg)'}}>
+            <div className='h-full w-full flex justify-center items-start pb-7 flex-col rounded-3xl bg-white shadow-xl md:w-96 md:h-96 md:transition-transform md:duration-500 md:focus-within:-translate-x-[70%] transform focus-within:scale-90'>
               <h4 className={` my-5 text-xl font-semibold w-full flex justify-center`}>CONTÁCTANOS</h4>
               <div className='w-full flex flex-col justify-center gap-4'>
                 <div className='w-full flex justify-center'>

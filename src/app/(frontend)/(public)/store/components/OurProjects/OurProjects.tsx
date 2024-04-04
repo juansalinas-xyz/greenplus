@@ -206,7 +206,7 @@ function OurProjects() {
 
   const clearFilters = () => {
     setFilters({
-      maxPrice: Infinity,
+      maxPrice: Math.max(...projects.map(project => project.price)),
       country: '',
       minTimescale: 0
     });

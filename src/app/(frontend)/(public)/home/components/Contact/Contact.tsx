@@ -1,42 +1,54 @@
-"use client"
+"use client";
 
-import React from 'react'
-import { Reveal } from '../Reveal/Reveal';
-
-import localFont from 'next/font/local';
-const insaniburger = localFont({src: '../../assets/fonts/Insaniburger.woff2'});
+import React from "react";
+import { Reveal } from "../Reveal/Reveal";
+import ContactMean from "../ContactMean/ContactMean";
 
 function Contact() {
+  const means = [
+    {
+      icon: "/landing/contact/email.png",
+      title: "Email",
+      data: "info@greenplus.global",
+      link: "",
+    },
+    {
+      icon: "/landing/contact/telefono.png",
+      title: "Telefono",
+      data: "+595-976-840-833",
+      link: "",
+    },
+    {
+      icon: "/landing/contact/whatsapp.png",
+      title: "Whatsapp",
+      data: "wa.me/595976840833",
+      link: "https://api.whatsapp.com/send/?phone=595976840833&text&type=phone_number&app_absent=0",
+    },
+  ];
+
   return (
-    <div id='contacto' className='w-screen flex justify-center my-12'>
-      <div style={{width: '75%'}}>
+    <div id="contacto" className="w-screen flex justify-center my-12">
+      <div style={{ width: "80%" }}>
         <Reveal>
-          <div className='flex justify-end w-full h-96 mb-12 rounded-3xl bg-cover bg-center shadow-xl md:rounded-3xl md:transition-transform md:duration-500 md:focus-within:scale-110' style={{backgroundImage: 'url(/landing/contact/fondo_contacto.jpg)'}}>
-            <div className='h-full w-full flex justify-center items-start pb-7 flex-col rounded-3xl bg-white shadow-xl md:w-96 md:h-96 md:transition-transform md:duration-500 md:focus-within:-translate-x-[70%] transform focus-within:scale-90'>
-              <h4 className={` my-5 text-xl font-semibold w-full flex justify-center`}>CONTÁCTANOS</h4>
-              <div className='w-full flex flex-col justify-center gap-4'>
-                <div className='w-full flex justify-center'>
-                  <input type="email" name="email" id="email" placeholder='Correo' className='w-4/5 h-8 p-4 rounded-full shadow-xl border border-zinc-500' />
-                </div>
-                <div className='w-full flex justify-center'>
-                  <textarea name="mensaje" id="mensaje" placeholder='Mensaje' className='w-4/5 h-32 resize-none p-4 rounded-3xl shadow-xl border border-zinc-500' />
-                </div>
-                <div className='ml-10 flex gap-2'>
-                  <input type="checkbox" name='politicas' id='politicas' className='h-3 w-3 mt-0.5 md:mt-1' />
-                  <label htmlFor="politicas" className='text-xs md:text-sm'>Acepto las politicas de privacidad.</label>
-                </div>
-                <div className='w-full flex justify-center'>
-                  <button className='bg-black px-5 py-2 rounded-full text-white hover:bg-green_greenplus'>
-                    ENVIAR
-                  </button>
-                </div>
-              </div>
+          <div className="w-full flex justify-center flex-col">
+            <div className={`w-full font-black flex justify-center items-center flex-row gap-1.5 bg-white mb-12 p-5 rounded-xl text-xl`}>
+              <p className="flex text-green_greenplus">CONTACTO</p>
+            </div>
+            <div>
+              <p className="text-lg text-center px-28 mb-12 font-light text-gray-500">
+                Contactános para obtener más información sobre nuestro servicio y sus ventajas. Estamos para responder tus preguntas y brindarte toda la información que necesitas.
+              </p>
+            </div>
+            <div className="h-full flex justify-center flex-col items-center">
+              {means.map((item, index) => (
+                <ContactMean index={index} icon={item.icon} title={item.title} data={item.data} link={item.link} />
+              ))}
             </div>
           </div>
         </Reveal>
       </div>
     </div>
-  )
+  );
 }
 
-export default Contact
+export default Contact;

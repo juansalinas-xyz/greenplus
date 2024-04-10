@@ -5,7 +5,7 @@ import { loraItalic } from "src/app/fonts";
 
 function Footer() {
   return (
-    <div className='w-screen h-52 bg-cover bg-left' style={{backgroundImage: 'url(/landing/fondo-cabecera-landing.png)'}}>
+    <div className='w-screen h-52 bg-cover bg-center' style={{backgroundImage: 'url(/landing/footer/fondo-footer.jpg)'}}>
       <div className='flex flex-row w-full h-full bg-gren_footer bg-opacity-90'>
         <div className='w-full h-full p-6 flex flex-col justify-evenly items-center text-center md:text-start md:flex-row md:p-0 md:justify-evenly'>
           <div className='w-full flex flex-col gap-1 md:w-1/4'>
@@ -26,8 +26,7 @@ function Footer() {
             <div className='w-full flex flex-row gap-4 justify-center md:justify-start'>
               <Image src={'/landing/footer/redes_sociales/footer_instagram.png'} alt={''} width={25} height={25} className='cursor-pointer'/>
               <Image src={'/landing/footer/redes_sociales/footer_x.png'} alt={''} width={25} height={25} className='cursor-pointer'/>
-              <Image src={'/landing/footer/redes_sociales/footer_facebook.png'} alt={''} width={25} height={25} className='cursor-pointer'/>
-              <Image src={'/landing/footer/redes_sociales/footer_github.png'} alt={''} width={25} height={25} className='cursor-pointer'/>
+              <Image src={'/landing/footer/redes_sociales/footer_linkedin.png'} alt={''} width={25} height={25} className='cursor-pointer'/>
             </div>
           </div>
         </div>

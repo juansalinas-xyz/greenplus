@@ -1,22 +1,21 @@
 import Contact from "./components/Contact/Contact"
 import Footer from "./components/Footer/Footer"
 import Headboard from "./components/Headboard/Headboard"
-import HowHelp from "./components/HowHelp/HowHelp"
-import OurProducts from "./components/OurProducts/OurProducts"
-import Sponsors from "./components/Sponsors/Sponsors"
+import OurProducts from "./components/OurProjects/OurProjects"
 import Team from "./components/Team/Team"
-import WithUs from "./components/WithUs/WithUs"
+import OurServices from "./components/OurServices/OurServices"
+import Advantages from "./components/Advantages/Advantages"
 
 function Home() {
   return (
     <div>
       <Headboard />
-      <Sponsors />
-      <WithUs />
-      <HowHelp />
+      <OurServices />
+      <Advantages />
+      <Team />
       <OurProducts />
       <Contact />
-      <Team />
+      
       <Footer />
     </div>
   )

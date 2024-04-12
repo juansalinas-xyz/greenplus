@@ -3,7 +3,7 @@ import Card from "../Card/Card";
 
 function OurServicesCards({ items }) {
   return (
-    <div className="flex flex-row"> 
+    <div className="flex flex-col md:flex-row gap-12 md:gap-0"> 
       {items.map((item, index) => (
         <Card
           key={index}

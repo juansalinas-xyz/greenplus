@@ -13,6 +13,20 @@ function ProductsCarousel({ items }) {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 768, 
+        settings: {
+          dots: false,
+          infinite: true,
+          speed: 2000,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 3000,
+        },
+      },
+    ],
   };
 
   return (

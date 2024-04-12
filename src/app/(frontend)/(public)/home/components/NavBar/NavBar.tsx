@@ -49,7 +49,7 @@ function NavBar() {
     <div className={`flex fixed z-50`}>
       <div className='w-screen block md:flex justify-center'>
         <div className='md:hidden flex flex-row items-center justify-between p-6 w-screen h-16 bg-white'>
-          <p className='text-black text-2xl font-black'>Greenplus</p>
+          <p className='text-black text-2xl font-black'>Green Plus</p>
           <button onClick={() => setMenuOpen(!menuOpen)}>
             <Image src={'/landing/menu.png'} alt={''} height={35} width={35} />
           </button>
@@ -57,7 +57,7 @@ function NavBar() {
         <div 
           className={`${
             menuOpen ? 'flex' : 'hidden'
-          } ${isScrolled ? 'mt-5 rounded-xl shadow-2xl transition-all duration-500' : 'mt-0 rounded-b-2xl transition-all duration-500'} md:flex flex-col items-end absolute pr-7 pb-7 pt-3 gap-8 w-screen text-base font-semibold md:static md:gap-0 md:p-0 md:flex-row md:justify- md:w-2/4 md:h-10 bg-white md:font-bold md:text-base`}
+          } ${isScrolled ? 'md:mt-5 mt-0 md:rounded-xl rounded-b-3xl shadow-2xl transition-all duration-500' : 'mt-0 rounded-b-2xl transition-all duration-500'} md:flex flex-col items-end absolute pr-7 pb-7 pt-3 gap-8 w-screen text-base font-semibold md:static md:gap-0 md:p-0 md:flex-row md:justify- md:w-2/4 md:h-10 bg-white md:font-bold md:text-base`}
         >
           <div onClick={handleServicioClick} className='md:h-full md:w-1/5 md:flex justify-center items-center cursor-pointer hover:text-green_greenplus hover:rounded-l-xl transition-colors duration-300'>
             <p>Servicios</p>

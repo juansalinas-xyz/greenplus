@@ -31,12 +31,12 @@ function OurServices() {
   ];
 
   return (
-    <div id='servicios' className='flex w-screen justify-center mt-2 mb-10'>
+    <div id='servicios' className='flex w-screen justify-center mt-2 md:mb-10'>
       <div className='flex flex-col justify-center' style={{width: '80%'}}>
-        <div className='w-full flex justify-start mt-12'>
-          <div className={`w-full flex justify-start flex-col text-xl font-semibold`}>
+        <div className='w-full flex justify-center md:justify-start mt-12'>
+          <div className={`w-full flex justify-center md:justify-start flex-col text-xl font-semibold`}>
             <Reveal>
-              <div className={`${loraItalic.className} w-full font-black flex justify-start items-center flex-row gap-1.5 bg-white p-5 pl-11 rounded-xl`}>
+              <div className={`${loraItalic.className} w-full font-black flex justify-center md:justify-start items-center flex-row gap-1.5 bg-white p-5 md:pl-11 rounded-xl`}>
                 <p className='flex text-black'>¿COMO </p>
                 <p className='text-green_greenplus'>LO HACEMOS?</p>
               </div>

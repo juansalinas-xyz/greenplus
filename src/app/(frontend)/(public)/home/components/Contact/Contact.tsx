@@ -4,6 +4,8 @@ import React from "react";
 import { Reveal } from "../Reveal/Reveal";
 import ContactMean from "../ContactMean/ContactMean";
 
+import { loraItalic } from "src/app/fonts";
+
 function Contact() {
   const means = [
     {
@@ -31,17 +33,17 @@ function Contact() {
       <div style={{ width: "80%" }}>
         <Reveal>
           <div className="w-full flex justify-center flex-col">
-            <div className={`w-full font-black flex justify-center items-center flex-row gap-1.5 bg-white mb-12 p-5 rounded-xl text-xl`}>
+            <div className={`${loraItalic.className} w-full font-black flex justify-center md:justify-start items-center flex-row gap-1.5 bg-white mb-12 md:pl-12 p-5 rounded-xl text-xl`}>
               <p className="flex text-green_greenplus">CONTACTO</p>
             </div>
             <div>
-              <p className="text-lg text-center px-28 mb-12 font-light text-gray-500">
+              <p className="text-lg text-center px-4 mb-6 md:px-28 md:mb-12 font-light text-gray-500">
                 Contactános para obtener más información sobre nuestro servicio y sus ventajas. Estamos para responder tus preguntas y brindarte toda la información que necesitas.
               </p>
             </div>
             <div className="h-full flex justify-center flex-col items-center">
               {means.map((item, index) => (
-                <ContactMean index={index} icon={item.icon} title={item.title} data={item.data} link={item.link} />
+                <ContactMean key={index} index={index} icon={item.icon} title={item.title} data={item.data} link={item.link} />
               ))}
             </div>
           </div>

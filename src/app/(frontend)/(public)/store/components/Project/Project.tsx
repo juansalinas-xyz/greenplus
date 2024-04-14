@@ -14,12 +14,12 @@ interface Props {
 
 function Project({ title, desc, ubication, responsible, size, timescale, mitigation, price, image }: Props) {
   return (
-    <div className="w-[95%] h-80 rounded-md bg-white flex flex-col mx-4 hover:scale-110 hover:shadow-2xl transition-transform">
+    <div className="w-[95%] h-[360px] md:h-80 rounded-md bg-white shadow-md md:shadow-none flex flex-col mx-4 hover:scale-110 hover:shadow-2xl transition-transform">
       <div
         className="w-full h-2/5 flex justify-center items-end bg-cover bg-center rounded-t-md"
         style={{ backgroundImage: `url(${image})` }}
       >
-        <p className="text-white text-xl font-bold pb-3">{title}</p>
+        <p className="text-white text-xl font-bold pb-3 text-center">{title}</p>
       </div>
       <div className="w-full h-3/5 flex justify-center flex-col px-5 pb-5 pt-5">
         <div className="text-black text-center text-xs mb-2 hover:scale-105 transition-transform">{desc}</div>

@@ -1,7 +1,8 @@
+import { lora } from "src/app/fonts";
+
 function Dashboard2Layot({ children }: { children: React.ReactElement }) {
   return (
-    <div>
-      <h1>Navrd</h1>
+    <div  className={`${lora.className} text-black bg-white overflow-hidden`}>
       {children}
     </div>
   );

@@ -182,15 +182,8 @@ function OurProjects() {
         style={{ width: "80%" }}
       >
         <Reveal>
-          <div>
-            <Link href={"/store"}>
-              <div
-                className={`group w-full font-black flex justify-center md:justify-end items-center flex-row gap-1.5 bg-white md:pr-12 p-5 rounded-xl text-xl md:mt-16 mb-8 cursor-pointer text-green_greenplus hover:pr-0 hover:bg-green_greenplus transition-all duration-500`}
-              >
-                <p className="block group-hover:hidden transition-all">PROYECTOS</p>
-                <p className="hidden group-hover:text-white group-hover:flex w-full justify-center transition-all">VER TODOS LOS PROYECTOS</p>
-              </div>
-            </Link>
+          <div className={`w-full font-black flex justify-center md:justify-end items-center flex-row gap-1.5 bg-white md:pr-12 p-5 rounded-xl text-xl md:mt-16 mb-8 text-green_greenplus`}>
+            <p className="block transition-all">PROYECTOS</p>
           </div>
         </Reveal>
         <div className="flex w-full items-center justify-center flex-col">

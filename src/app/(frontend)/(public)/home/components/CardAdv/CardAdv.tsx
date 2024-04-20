@@ -19,13 +19,13 @@ function Card({ icon, title, img, img_responsive }: Props) {
         })`,
       }}
     >
-      <div className="h-full flex items-center flex-col gap-2 pt-10">
-        <div className="w-full flex justify-center items-end h-1/3 rounded-t-md">
-          <Image src={icon} alt={""} height={50} width={50} />
+      <div className="h-full flex items-center flex-col gap-2 pt-10 md:pt-0 lg:pt-10">
+        <div className="w-full flex justify-center items-end h-1/3 rounded-t-md drop-shadow-xl">
+          <Image src={icon} alt={""} height={50} width={50} className="drop-shadow-xl" />
         </div>
         <div className="w-full h-1/3 rounded-b-md text-white flex">
-          <div className="w-full flex justify-center items-start py-2 px-8">
-            <p className="text-center font-black text-base">{title}</p>
+          <div className="w-full flex justify-center items-start py-2 px-8 md:px-3 lg:px-8">
+            <p className="text-center font-black text-base [text-shadow:_0_1px_0_rgb(0_0_0_/_20%)] lg:[text-shadow:_0_0_0_rgb(0_0_0_/_20%)]">{title}</p>
           </div>
         </div>
       </div>

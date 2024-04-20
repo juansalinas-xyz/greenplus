@@ -18,7 +18,7 @@ function Headboard() {
         <div className='flex flex-col bg-cover bg-center h-full w-screen bg-fixed' style={{backgroundImage: 'url(/landing/headboard/fondo_headboard.jpg)'}}>
           <NavBar />
           <div className='w-screen h-full md:h-auto flex items-center justify-center flex-grow mt-28 md:mt-32'>
-            <div className='flex flex-col gap-5 text-white md:flex-row md:justify-start' style={{width: '75%'}}>
+            <div className='flex flex-col gap-5 text-white md:flex-row md:justify-start' style={{width: '90%'}}>
               <div className='w-full flex justify-center gap-1 mt-0'>
                 <Reveal>
                   <div className='w-full flex justify-center flex-col gap-10 mt-0 text-center md:block md:justify-start md:flex-row md:w-auto md:gap-0 '>

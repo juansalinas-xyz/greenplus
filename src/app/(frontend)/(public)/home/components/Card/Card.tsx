@@ -9,7 +9,7 @@ interface Props {
 
 function Card( {icon, title, desc}: Props ) {
   return (
-    <div className='md:w-1/4 md:h-96 w-full h-64 md:mx-2 hover:shadow-xl hover:scale-105 transition-transform'>
+    <div className='lg:w-1/4 md:h-96 w-full h-64 md:mx-2 hover:shadow-xl hover:scale-105 transition-transform'>
         <div className='bg-green_greenplus w-full flex justify-center items-center h-1/3 md:h-1/4 rounded-t-md'>
             <Image src={icon} alt={''} height={50} width={50}/>
         </div>

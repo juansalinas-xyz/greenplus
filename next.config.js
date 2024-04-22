@@ -20,6 +20,15 @@ const nextConfig = {
       transform: "@mui/icons-material/{{member}}",
     },
   },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/home',
+        permanent: true,
+      },
+    ]
+  }
 };
 
 module.exports = nextConfig

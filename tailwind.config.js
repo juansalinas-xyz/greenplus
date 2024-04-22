@@ -5,9 +5,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-
-      },
       colors: {
         green_greenplus: "#8EB834", //#38731D //ORIGINAL: #8EB834 
         gren_footer: "#1F2C09",

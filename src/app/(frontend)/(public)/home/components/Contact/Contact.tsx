@@ -12,13 +12,13 @@ function Contact() {
       icon: "/landing/contact/email.png",
       title: "Email",
       data: "info@greenplus.global",
-      link: "",
+      link: "mailto:info@greenplus.global",
     },
     {
       icon: "/landing/contact/telefono.png",
       title: "Telefono",
       data: "+595-976-840-833",
-      link: "",
+      link: "tel:+595976840833",
     },
     {
       icon: "/landing/contact/whatsapp.png",

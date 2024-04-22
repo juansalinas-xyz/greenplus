@@ -4,7 +4,7 @@ function WavyShape() {
   return (
     <div>
       <div className="hidden md:block relative w-screen h-[150px]">
-        <svg width="2880" height="300" xmlns="http://www.w3.org/2000/svg" style={{ transform: 'translateY(-50px)' }}>
+        <svg width="2880" height="200" xmlns="http://www.w3.org/2000/svg" style={{ transform: 'translateY(-30px)' }}>
           <path fill="#F3F4F6" d="M0 150 Q 480 180, 960 150 Q 1440 120, 1920 150 Q 2400 180, 2880 150 Q 2880 300, 0 300 Z" />
         </svg>
       </div>

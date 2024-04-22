@@ -4,7 +4,8 @@ import React from "react";
 import ProductsCarousel from "../ProjectsCarousel/ProjectsCarousel";
 
 import { Reveal } from "../Reveal/Reveal";
-import Link from "next/link";
+
+import { loraItalic } from "src/app/fonts";
 
 function OurProjects() {
   const projects = [
@@ -182,7 +183,7 @@ function OurProjects() {
         style={{ width: "80%" }}
       >
         <Reveal>
-          <div className={`w-full font-black flex justify-center md:justify-end items-center flex-row gap-1.5 bg-white md:pr-12 p-5 rounded-xl text-xl md:mt-16 mb-8 text-green_greenplus`}>
+          <div className={`${loraItalic.className} w-full font-black flex justify-center md:justify-end items-center flex-row gap-1.5 bg-white md:pr-12 p-5 rounded-xl text-xl md:mt-16 mb-8 text-green_greenplus`}>
             <p className="block transition-all">PROYECTOS</p>
           </div>
         </Reveal>

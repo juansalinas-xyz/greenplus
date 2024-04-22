@@ -48,7 +48,7 @@ function NavBar() {
   return (
     <div className={`flex fixed z-50`}>
       <div className='w-screen block md:flex justify-center'>
-        <div className='md:hidden flex flex-row items-center justify-between p-6 w-screen h-16 bg-white'>
+        <div className='md:hidden z-50 flex flex-row items-center justify-between p-6 w-screen h-16 bg-white'>
           <p className='text-black text-2xl font-black'>Green Plus</p>
           <button onClick={() => setMenuOpen(!menuOpen)}>
             <Image src={'/landing/menu.png'} alt={''} height={35} width={35} />
@@ -62,11 +62,11 @@ function NavBar() {
           <div onClick={handleHomeClick} className='md:h-full md:w-1/5 md:flex justify-center items-center cursor-pointer hover:text-green_greenplus hover:rounded-l-xl transition-colors duration-300'>
             <p>Home</p>
           </div>
-          <div onClick={handleNosotrosClick} className='md:h-full md:w-1/5 md:flex justify-center items-center cursor-pointer hover:text-green_greenplus transition-colors duration-300'>
-            <p>Nosotros</p>
-          </div>
-          <div onClick={handleServicioClick} className='md:h-full md:w-1/5 md:flex justify-center items-center cursor-pointer text-black hover:text-green_greenplus transition-colors duration-300'>
+          <div onClick={handleServicioClick} className='md:h-full md:w-1/5 md:flex justify-center items-center cursor-pointer hover:text-green_greenplus transition-colors duration-300'>
             <p>Servicios</p>
+          </div>
+          <div onClick={handleNosotrosClick} className='md:h-full md:w-1/5 md:flex justify-center items-center cursor-pointer text-black hover:text-green_greenplus transition-colors duration-300'>
+            <p>Nosotros</p>
           </div>
           <div onClick={handleProyectosClick} className='md:h-full md:w-1/5 md:flex justify-center items-center cursor-pointer hover:text-green_greenplus transition-colors duration-300 '>
             <p>Proyectos</p>

@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <ThemeRegistry>
 				<UserProvider>
-					<body className={inter.className}>{children}</body>
+					<body className={`${inter.className} bg-gray-100`}>{children}</body>
 				</UserProvider>
       </ThemeRegistry>
     </html>

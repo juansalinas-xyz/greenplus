@@ -19,8 +19,8 @@ const themeOptions: ThemeOptions = {
   },
   palette: {
     background: {
-      // pink
-      default: "#f8bbd0",
+      // gray-100
+      default: "#F3F4F6", // pink -> #f8bbd0
     },
     primary: {
       main: "#1976d2",

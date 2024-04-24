@@ -14,7 +14,7 @@ function Headboard() {
 
   return (
     <div id='home'>
-      <div className='h-[90vh] w-screen'>
+      <div className='h-[95vh] w-screen'>
         <div className='flex flex-col bg-cover bg-center h-full w-screen bg-fixed' style={{backgroundImage: 'url(/landing/headboard/fondo_headboard.jpg)'}}>
           <NavBar />
           <div className='w-screen h-full md:h-auto flex items-center justify-center flex-grow mt-28 md:mt-32'>

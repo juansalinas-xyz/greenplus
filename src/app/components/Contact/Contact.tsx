@@ -9,12 +9,6 @@ import { loraItalic } from "src/app/fonts";
 function Contact() {
   const means = [
     {
-      icon: "/landing/contact/email.png",
-      title: "Email",
-      data: "info@greenplus.global",
-      link: "mailto:info@greenplus.global",
-    },
-    {
       icon: "/landing/contact/telefono.png",
       title: "Telefono",
       data: "+595-976-840-833",

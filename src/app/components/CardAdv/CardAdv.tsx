@@ -1,7 +1,5 @@
-"use client"
-
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 interface Props {
   icon: string;
@@ -11,14 +9,18 @@ interface Props {
 }
 
 function Card({ icon, title, img, img_responsive }: Props) {
+  const [imageSource, setImageSource] = useState(img);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setImageSource(window.innerWidth < 768 ? img_responsive : img);
+    }
+  }, [img, img_responsive]);
+
   return (
     <div className={`md:w-1/3 w-full bg-cover bg-center h-72 flex items-center md:mx-2 rounded-md shadow-md hover:shadow-gray-400 bg-white hover:shadow-2xl transition-all duration-300`}
       style={{
-        backgroundImage: `url(${
-          window.innerWidth < 768
-            ? `${img_responsive}`
-            : `${img}`
-        })`,
+        backgroundImage: `url(${imageSource})`,
       }}
     >
       <div className="h-full flex items-center flex-col gap-2 pt-10 md:pt-0 lg:pt-10">

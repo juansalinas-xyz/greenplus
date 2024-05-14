@@ -37,7 +37,7 @@ function OurServices() {
           <div className={`w-full flex justify-center md:justify-start flex-col text-xl font-semibold`}>
             <Reveal>
               <div className={`${loraItalic.className} w-full font-black flex justify-center md:justify-start items-center flex-row gap-1.5 bg-white p-5 md:pl-11 rounded-xl`}>
-                <p className='flex text-black'>¿COMO </p>
+                <p className='flex text-black'>¿CÓMO </p>
                 <p className='text-green_greenplus'>LO HACEMOS?</p>
               </div>
             </Reveal>

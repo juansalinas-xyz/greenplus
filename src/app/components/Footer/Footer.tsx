@@ -23,11 +23,6 @@ function Footer() {
             <div className='w-full flex justify-center mb-3 md:justify-start'>
               <p className='text-white text-xs'>Transformando la Sostenibilidad con Accesibilidad, Transparencia, Rapidez y Seguridad.</p>
             </div>
-            <div className='w-full flex flex-row gap-4 justify-center md:mb-0 md:justify-start'>
-              <Image src={'/landing/footer/redes_sociales/footer_instagram.png'} alt={''} width={25} height={25} className='cursor-pointer'/>
-              <Image src={'/landing/footer/redes_sociales/footer_x.png'} alt={''} width={25} height={25} className='cursor-pointer'/>
-              <Image src={'/landing/footer/redes_sociales/footer_linkedin.png'} alt={''} width={25} height={25} className='cursor-pointer'/>
-            </div>
           </div>
         </div>
       </div>

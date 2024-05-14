@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
-import { useRouter } from "next/router";
+import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
 function Page() {
+  const params = useParams<{ ticket: string }>();
   const router = useRouter();
-  const params = router.query;
 
   if(params.ticket.length > 6 || params.ticket.length < 3) {
     router.push("/error");

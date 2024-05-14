@@ -36,7 +36,7 @@ function Advantages() {
       >
         <div className="w-full flex justify-end mt-10">
           <div
-            className={`w-full flex justify-center flex-col text-lg md:text-xl font-semibold`}
+            className={`w-full flex justify-center flex-col text-[16px] md:text-xl font-semibold`}
           >
             <Reveal>
               <div

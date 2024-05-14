@@ -21,14 +21,14 @@ function AboutUs() {
       img: "/landing/profiles/santiago.jpeg",
       name: "Santiago Iannello",
       position: "Design Lead",
-      desc: "Mas de 2 años de experiencia en desarrollo de software.",
+      desc: "Más de 2 años de experiencia en desarrollo de software.",
       linkedin: "https://www.linkedin.com/in/santiago-iannello/",
     },
     {
       img: "/landing/profiles/lautaro.jpeg",
       name: "Lautaro Carreño",
       position: "Frontend Developer",
-      desc: "Mas de 2 años de experiencia en desarrollo de software.",
+      desc: "Más de 2 años de experiencia en desarrollo de software.",
       linkedin: "https://www.linkedin.com/in/lautaro-carreño-9b9248b1/",
     },
   ];
@@ -36,7 +36,7 @@ function AboutUs() {
   return (
     <div className="flex justify-center w-screen">
       <div className="w-full flex flex-col justify-center text-black font-bold">
-        <h3 className="text-center text-4xl">¿Quienes somos?</h3>
+        <h3 className="text-center text-4xl">¿Quiénes somos?</h3>
         <p className="ml-1 text-lg text-center px-8 md:px-40 mb-14 mt-10 font-light text-gray-500">
           Nuestro equipo está compuesto de un plantel multidisciplinario con una
           extensa experiencia en la aplicación de tecnologías de vanguardia y el

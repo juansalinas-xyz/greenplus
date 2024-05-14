@@ -15,7 +15,7 @@ interface Props {
 
 function Project({ title, desc, ubication, responsible, size, timescale, mitigation, price, image }: Props) {
   return (
-    <div className="group w-[95%] h-80 rounded-md bg-white flex flex-col mx-4 cursor-pointer hover:shadow-lg transition-transform">
+    <div className="group w-[95%] h-80 rounded-md bg-white flex flex-col ml-2 cursor-pointer hover:shadow-lg transition-transform">
       <div
         className="w-full h-3/5 md:h-2/4 flex justify-center items-end bg-cover bg-center rounded-t-md px-0 lg:px-0 md:px-2"
         style={{ backgroundImage: `url(${image})` }}

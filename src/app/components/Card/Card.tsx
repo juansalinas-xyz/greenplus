@@ -17,7 +17,7 @@ function Card( {icon, title, desc}: Props ) {
             <div className='w-full h-auto flex justify-center pt-2 md:py-2 px-4'>
                 <p className='text-center font-black text-base'>{title}</p>
             </div>
-            <div className='w-full flex justify-center py-1 px-4'>
+            <div className='w-full flex justify-center py-1 px-4 md:pb-0 pb-2'>
                 <p className='text-center text-sm my-auto'>{desc}</p>
             </div>
         </div>

@@ -6,7 +6,7 @@ import { loraItalic } from "src/app/fonts";
 function Footer() {
   return (
     <div className='w-screen h-52 bg-cover bg-center' style={{backgroundImage: 'url(/landing/footer/fondo-footer.jpg)'}}>
-      <div className='flex flex-row w-full h-full bg-gren_footer bg-opacity-90'>
+      <div className='flex flex-row w-full h-full bg-gren_footer bg-opacity-90 pb-3'>
         <div className='w-full h-full p-6 flex flex-col justify-evenly items-center text-center md:text-start md:flex-row md:p-0 md:justify-evenly'>
           <div className='w-full flex flex-col gap-1 md:w-1/4'>
             <div className={`${loraItalic.className} flex flex-row gap-0.5 text-lg font-black justify-center md:text-xl md:justify-start`}>
@@ -23,7 +23,7 @@ function Footer() {
             <div className='w-full flex justify-center mb-3 md:justify-start'>
               <p className='text-white text-xs'>Transformando la Sostenibilidad con Accesibilidad, Transparencia, Rapidez y Seguridad.</p>
             </div>
-            <div className='w-full flex flex-row gap-4 justify-center md:justify-start'>
+            <div className='w-full flex flex-row gap-4 justify-center md:mb-0 md:justify-start'>
               <Image src={'/landing/footer/redes_sociales/footer_instagram.png'} alt={''} width={25} height={25} className='cursor-pointer'/>
               <Image src={'/landing/footer/redes_sociales/footer_x.png'} alt={''} width={25} height={25} className='cursor-pointer'/>
               <Image src={'/landing/footer/redes_sociales/footer_linkedin.png'} alt={''} width={25} height={25} className='cursor-pointer'/>

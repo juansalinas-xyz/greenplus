@@ -219,9 +219,9 @@ function page() {
           <div className="w-full h-auto py-4 rounded-xl bg-white flex flex-col justify-start gap-2 px-4 mt-3">
             <p className="text-center font-medium text-gray-800 lg:text-[16px] text-sm">Descubre más información sobre la neutralización de la huella de carbono de tu vuelo en la blockchain</p>
             <Link href={"https://testnet.explorer.perawallet.app/tx/KOWSWS24JUKVLWDQFMOOWWDHV4SW5LIOY7FPARCF7MYHRX3N6LTA/"}>
-              <div className="flex flex-row justify-center gap-2 mx-4 mt-2 bg-green_greenplus rounded-xl p-2 cursor-pointer hover:shadow-2xl transition-all">
+              <div className="flex flex-row justify-center items-center gap-2 mx-4 mt-2 bg-green_greenplus rounded-xl p-2 cursor-pointer hover:shadow-2xl transition-all">
                 <Image src={"/ticket/blockchain.png"} alt={""} height={20} width={20} className="bg-cover h-auto w-auto"/>
-                <p className="text-white text-center">Manifiesto</p>
+                <p className="text-white">Manifiesto</p>
               </div>
             </Link>
           </div>

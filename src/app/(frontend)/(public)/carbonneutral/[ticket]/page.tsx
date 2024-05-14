@@ -18,6 +18,11 @@ function Page() {
     <div className="w-screen h-auto flex-col bg-slate-200 pb-12">
       <div className="h-[45vh] lg:max-h-80 w-full bg-center bg-cover flex justify-center items-center lg:items-start lg:justify-start bg-[url('/ticket/fondo_ticket2.jpg')]">
         <div className="md:h-80 md:w-80 h-[80%] w-[80%] min-h-[310px] lg:mt-[70px] lg:ml-[188px] py-5 px-5 rounded-2xl flex flex-col items-center gap-5 bg-white shadow-md backdrop-blur-lg">
+        <div>
+              <p className="font-bold">
+                Carbono Neutral
+              </p>
+            </div>
           <div className="flex gap-3 flex-col">
             <div className="flex justify-center">
               <Image
@@ -70,7 +75,7 @@ function Page() {
       </div>
       <div className="h-4 lg:w-[70%] w-full flex lg:justify-end justify-center lg:items-center lg:ml-44 mt-4 font-black cursor-pointer">
         <Link href={"/"}>
-          <div className="group flex flex-row gap-1 hover:bg-green_greenplus hover:rounded-2xl hover:p-2 hover:mt-4 transition-all duration-500">
+          <div className="group flex flex-row gap-1 hover:bg-green_greenplus hover:rounded-2xl hover:p-2 hover:mt-4 transition-all duration-500"> 
             <p className="text-end text-black group-hover:text-white transition-all duration-500">
               Powered by
             </p>
@@ -214,7 +219,7 @@ function Page() {
         </div>
         <div className="flex items-center lg:items-stretch flex-col lg:w-[70%] w-[85%]">
           <div className="w-full flex justify-start">
-            <p className="font-medium text-lg text-gray-600">Compensación de carbono</p>
+            <p className="font-medium text-lg text-gray-600">Información de carbono neutralidad</p>
           </div>
           <div className="w-full h-auto py-4 rounded-xl bg-white flex flex-col justify-start gap-2 px-4 mt-3">
             <p className="text-center font-medium text-gray-800 lg:text-[16px] text-sm">Descubre más información sobre la neutralización de la huella de carbono de tu vuelo en la blockchain</p>

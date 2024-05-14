@@ -226,7 +226,7 @@ function page() {
             <Link href={"https://testnet.explorer.perawallet.app/tx/KOWSWS24JUKVLWDQFMOOWWDHV4SW5LIOY7FPARCF7MYHRX3N6LTA/"}>
               <div className="flex flex-row justify-center gap-2 mx-4 mt-2 bg-green_greenplus rounded-xl p-2 cursor-pointer hover:shadow-2xl transition-all">
                 <Image src={"/ticket/blockchain.png"} alt={""} height={20} width={20} className="bg-cover h-auto w-auto"/>
-                <p className="text-white">Manifiesto 1 {'>'}</p>
+                <p className="text-white text-center">Manifiesto</p>
               </div>
             </Link>
           </div>

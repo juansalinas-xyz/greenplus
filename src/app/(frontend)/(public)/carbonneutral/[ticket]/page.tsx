@@ -5,7 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
-function page() {
+const Page = () => {
   const params = useParams<{ ticket: string }>();
   const router = useRouter();
 
@@ -231,4 +231,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

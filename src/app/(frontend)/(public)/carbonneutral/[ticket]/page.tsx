@@ -65,11 +65,6 @@ function page() {
               />
               <p className="text-green_greenplus font-bold">TRIBU Air</p>
             </div>
-            <div>
-              <p className="underline cursor-pointer hover:text-zinc-700">
-                Ver detalles del vuelo
-              </p>
-            </div>
           </div>
         </div>
       </div>

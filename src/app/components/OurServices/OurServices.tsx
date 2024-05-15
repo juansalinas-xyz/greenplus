@@ -11,7 +11,7 @@ function OurServices() {
     {
       icon: "/landing/ourservices/medicion.png",
       title: "Medimos tu huella de carbono",
-      desc: "Con agentes automatizados, generamos un inventario de tus emisiones y aplicamos algoritmos de machine learning para identificar patrones, tendencias y oportunidades de mejora para reducir tu impacto ambiental.",
+      desc: "Generamos un inventario de tus emisiones e identificamos patrones, tendencias y oportunidades de mejora para reducir tu impacto ambiental.",
     },
     {
       icon: "/landing/ourservices/barato.png",

@@ -27,11 +27,6 @@ function Project({ title, desc, ubication, responsible, size, timescale, mitigat
         <div className="flex flex-row gap-1 text-black text-xs mt-auto hover:text-green_greenplus hover:scale-105 transition-transform "><p className="font-black">Ubicación:</p> {ubication}</div>
         <div className="flex flex-row gap-1 text-black text-xs hover:text-green_greenplus hover:scale-105 transition-transform"><p className="font-black">Responsable:</p> {responsible}</div>
         <div className="flex flex-row gap-1 text-black text-xs hover:text-green_greenplus hover:scale-105 transition-transform"><p className="font-black">Mitigación:</p> {mitigation} CO2/año</div>
-        <div className="w-full flex justify-end mt-auto">
-          <div className="flex justify-center items-center bg-green_greenplus rounded-full mt-2 mb-1 py-1.5 px-3 hover:scale-105 hover:shadow-lg transition-transform">
-            <p className="text-white text-sm font-black">${price} USD</p>
-          </div>
-        </div>
       </div>
     </div>
   );

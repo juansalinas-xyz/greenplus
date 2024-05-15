@@ -191,7 +191,7 @@ function OurProjects() {
           <Reveal>
             <div className="flex w-full justify-center">
               <p className="text-lg text-center md:px-40 mb-10 font-light text-gray-500">
-                Explorá nuestros proyectos de compensación
+                Conoce nuestros proyectos de compensación
               </p>
             </div>
           </Reveal>

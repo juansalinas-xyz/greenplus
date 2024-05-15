@@ -16,17 +16,17 @@ function OurServices() {
     {
       icon: "/landing/ourservices/barato.png",
       title: "Compensar con créditos de carbono más económicos",
-      desc: "Te aseguramos los precios más económicos de nuestra red de productores para compensar tu huella.",
+      desc: "Te aseguramos los precios más económicos de nuestra red de proveedores de créditos de carbono para compensar tu huella.",
     },
     {
       icon: "/landing/ourservices/trazabilidad.png",
       title: "Trazabilidad ampliada de la huella de carbono corporativa",
-      desc: "Demuestra a tus clientes un real compromiso con una economía garantizando la transparencia con datos auditables para cualquier persona.",
+      desc: "Demuestra a tus clientes un real compromiso con una economía sostenible, garantizando la transparencia con datos auditables para cualquier persona.",
     },
     {
       icon: "/landing/ourservices/qr.png",
       title: "Servicios y Productos carbono neutral",
-      desc: "Demuestra a tus clientes tu compromiso con una economía sostenible lanzando al mercado servicios y productos carbono neutral con trazabilidad ampliada verificable desde un QR.",
+      desc: "Demuestra a tus clientes tu compromiso con una economía sostenible lanzando al mercado servicios y productos carbono neutral con trazabilidad ampliada verificable desde un código QR.",
     },
   ];
 

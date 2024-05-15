@@ -32,7 +32,7 @@ function Contact() {
             </div>
             <div>
               <p className="text-lg text-center px-4 mb-6 md:px-28 md:mb-12 font-light text-gray-500">
-                Contactános para obtener más información sobre nuestro servicio y sus ventajas. Estamos para responder tus preguntas y brindarte toda la información que necesitas.
+                Contactános para obtener más información sobre nuestros servicios y sus ventajas. Estamos para responder tus preguntas y brindarte toda la información que necesitas.
               </p>
             </div>
             <div className="h-full flex justify-center flex-col items-center">

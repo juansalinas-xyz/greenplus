@@ -1,29 +1,13 @@
-"use client";
-
 import React from "react";
-import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
 function Page() {
-  const params = useParams<{ ticket: string }>();
-  const router = useRouter();
-
-  if(params.ticket.length > 6 || params.ticket.length < 3) {
-    router.push("/error");
-    return null;
-  }
-
   return (
     <div className="w-screen h-auto flex-col bg-slate-200 pb-12">
       <div className="h-[45vh] lg:max-h-80 w-full bg-center bg-cover flex justify-center items-center lg:items-start lg:justify-start bg-[url('/ticket/fondo_ticket2.jpg')]">
         <div className="md:h-80 md:w-80 h-[80%] w-[80%] min-h-[310px] lg:mt-[70px] lg:ml-[188px] py-5 px-5 rounded-2xl flex flex-col items-center gap-5 bg-white shadow-md backdrop-blur-lg">
-        <div>
-              <p className="font-bold">
-                Carbono Neutral
-              </p>
-            </div>
-          <div className="flex gap-3 flex-col">
+          <div className="flex gap-3 flex-col items">
             <div className="flex justify-center">
               <Image
                 src={"/ticket/greenplus.png"}
@@ -32,6 +16,9 @@ function Page() {
                 width={35}
                 className="h-auto w-auto"
               />
+            </div>
+            <div className="flex justify-center">
+              <p className="font-bold">Carbono Neutral</p>
             </div>
             <div className="flex flex-row justify-center h-auto gap-5">
               <div className="flex flex-col items-center">
@@ -75,7 +62,7 @@ function Page() {
       </div>
       <div className="h-4 lg:w-[70%] w-full flex lg:justify-end justify-center lg:items-center lg:ml-44 mt-4 font-black cursor-pointer">
         <Link href={"/"}>
-          <div className="group flex flex-row gap-1 hover:bg-green_greenplus hover:rounded-2xl hover:p-2 hover:mt-4 transition-all duration-500"> 
+          <div className="group flex flex-row gap-1 hover:bg-green_greenplus hover:rounded-2xl hover:p-2 hover:mt-4 transition-all duration-500">
             <p className="text-end text-black group-hover:text-white transition-all duration-500">
               Powered by
             </p>
@@ -95,7 +82,9 @@ function Page() {
       <div className="h-full w-full flex flex-col items-center lg:mt-36 mt-10 gap-12">
         <div className="flex lg:items-start items-center md:flex-row flex-col gap-5 lg:w-[70%] w-[85%]">
           <div className="w-full flex flex-col lg:items-start items-center gap-3">
-            <p className="ml-0.5 w-full font-bold text-2xl">Detalles del vuelo</p>
+            <p className="ml-0.5 w-full font-bold text-2xl">
+              Detalles del vuelo
+            </p>
             <div className="w-full h-28 py-4 rounded-xl bg-white flex flex-col gap-2 px-5">
               <div className="flex flex-row gap-4">
                 <div className="flex flex-row justify-center gap-3">
@@ -123,7 +112,7 @@ function Page() {
                 <div className="flex flex-row gap-2">
                   <p className="text-gray-500 text-base">Codigo de reserva:</p>
                   <p className="text-green_greenplus text-base font-bold">
-                    {params.ticket}
+                    W9F33R
                   </p>
                 </div>
               </div>
@@ -219,13 +208,28 @@ function Page() {
         </div>
         <div className="flex items-center lg:items-stretch flex-col lg:w-[70%] w-[85%]">
           <div className="w-full flex justify-start">
-            <p className="font-medium text-lg text-gray-600">Información de carbono neutralidad</p>
+            <p className="font-medium text-lg text-gray-600">
+              Información de carbono neutralidad
+            </p>
           </div>
           <div className="w-full h-auto py-4 rounded-xl bg-white flex flex-col justify-start gap-2 px-4 mt-3">
-            <p className="text-center font-medium text-gray-800 lg:text-[16px] text-sm">Descubre más información sobre la neutralización de la huella de carbono de tu vuelo en la blockchain</p>
-            <Link href={"https://testnet.explorer.perawallet.app/tx/KOWSWS24JUKVLWDQFMOOWWDHV4SW5LIOY7FPARCF7MYHRX3N6LTA/"}>
+            <p className="text-center font-medium text-gray-800 lg:text-[16px] text-sm">
+              Descubre más información sobre la neutralización de la huella de
+              carbono de tu vuelo en la blockchain
+            </p>
+            <Link
+              href={
+                "https://testnet.explorer.perawallet.app/tx/KOWSWS24JUKVLWDQFMOOWWDHV4SW5LIOY7FPARCF7MYHRX3N6LTA/"
+              }
+            >
               <div className="flex flex-row justify-center items-center gap-2 mx-4 mt-2 bg-green_greenplus rounded-xl p-2 cursor-pointer hover:shadow-2xl transition-all">
-                <Image src={"/ticket/blockchain.png"} alt={""} height={20} width={20} className="bg-cover h-auto w-auto"/>
+                <Image
+                  src={"/ticket/blockchain.png"}
+                  alt={""}
+                  height={20}
+                  width={20}
+                  className="bg-cover h-auto w-auto"
+                />
                 <p className="text-white">Manifiesto</p>
               </div>
             </Link>
